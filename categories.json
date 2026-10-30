@@ -1,0 +1,12 @@
+[
+  {"id":"01M651PC00NSSQF0KXB4FSY3J1","parent":null,"slug":"hardware","name":"Hardware Note","theme":"02","icon":"/img/01M651PC00NSSQF0KXB4FSY3J1/b842b18ca0ff.webp","description":"SoC, Embedded, FPGA","order":3,"visible":true},
+  {"id":"01M651PC0078NBC62J3EZDXHDQ","parent":"01M651PC00NSSQF0KXB4FSY3J1","slug":"computer-architecture-note","name":"Computer Architecture Note","theme":"02","icon":"/img/01M651PC0078NBC62J3EZDXHDQ/21349e12e838.webp","description":"컴퓨터 구조","order":3,"visible":true},
+  {"id":"01M651PC00PPZ9M79TYD9S0526","parent":"01M651PC00NSSQF0KXB4FSY3J1","slug":"embedded-note","name":"Embedded Note","theme":"02","icon":"/img/01M651PC00PPZ9M79TYD9S0526/fe14c6def8a6.webp","description":"임베디드 시스템","order":1,"visible":true},
+  {"id":"01M651PC008HMQK12XE50G198W","parent":"01M651PC00NSSQF0KXB4FSY3J1","slug":"microprocessor-note","name":"Microprocessor Note","theme":"02","icon":"/img/01M651PC008HMQK12XE50G198W/b28f24c82755.webp","description":"마이크로프로세서 설계","order":2,"visible":true},
+  {"id":"01M651PC003HYJYHCQPHT4KAWF","parent":"01M651PC00NSSQF0KXB4FSY3J1","slug":"soc-note","name":"SoC Note","theme":"02","icon":"/img/01M651PC003HYJYHCQPHT4KAWF/36fc09cbcc31.webp","description":"System on Chip 설계","order":0,"visible":true},
+  {"id":"01M651PC0020GH6KP56GXEHMCY","parent":null,"slug":"project","name":"Project","theme":"03","icon":"/img/01M651PC0020GH6KP56GXEHMCY/0e7cace57300.webp","description":"App, Hardware, Web Projects","order":0,"visible":true,"project":true},
+  {"id":"01M651PC00H3J4W7JXTZ32PR45","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"hardware-project","name":"Hardware Project","theme":"03","icon":"/img/01M651PC00H3J4W7JXTZ32PR45/fd243e588f1f.webp","description":"FPGA, SoC, Embedded 프로젝트","order":0,"visible":true},
+  {"id":"01M651PC00H447GE8N3ADKJMGZ","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"web-project","name":"Web & App Project","theme":"03","icon":"/img/01M651PC00H447GE8N3ADKJMGZ/53805fb50403.webp","description":"웹 개발 프로젝트","order":2,"visible":true},
+  {"id":"01M651PC00AT7C6BNVD4N04PH1","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"other-project","name":"etc Project","theme":"03","icon":"/img/01M651PC00AT7C6BNVD4N04PH1/3f0659ea5d0a.webp","description":"기타 프로젝트","order":3,"visible":true},
+  {"id":"01M651PC004D9T04SN9SXTH5R6","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"ai-project","name":"AI Project","theme":"03","icon":"/img/01M651PC004D9T04SN9SXTH5R6/7f580519bcdc.webp","description":"AI/ML 프로젝트","order":1,"visible":true}
+]
