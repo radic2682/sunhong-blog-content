@@ -4,7 +4,7 @@ slug: "crossbar-bus"
 title: "크로스바 버스 구조: 공유 버스에서 Full Matrix까지 버스 아키텍처 진화"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "PL301 Structure, Arbitation Scheme"
+summary: "PL301 Structure, Arbitration Scheme"
 thumbnail: "/img/01HMCXW4001E6CHQ8AA7GC0ES1/98ecc750a0f8.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

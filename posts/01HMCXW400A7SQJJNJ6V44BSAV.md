@@ -108,7 +108,7 @@ $$\text{CPI} = 1 + 0.1 \times 3 = 1.3$$
 - **Delayed branch** — compiler schedules a useful instruction into the delay slot (MIPS)
 - Compile re-orders instructions into delay slot. Insert `nop` (no operation) instructions when can't reorder.
 
-![Control Hazard 및 Branch 해결책|full</full>](/img/01HMCXW400A7SQJJNJ6V44BSAV/cf35f7a3292f.webp)
+![Control Hazard 및 Branch 해결책|full](/img/01HMCXW400A7SQJJNJ6V44BSAV/cf35f7a3292f.webp)
 
 ## Pipelined Implementation의 성능
 

@@ -4,7 +4,7 @@ slug: "computer-architecture-isa-performance"
 title: "컴퓨터 구조 기초: ISA와 추상화 계층, 성능 평가 방법론"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Instraction Set Architecture"
+summary: "Instruction Set Architecture"
 thumbnail: "/img/01HMCXW4002J3E8WZETZZMXANN/76626e6d4927.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

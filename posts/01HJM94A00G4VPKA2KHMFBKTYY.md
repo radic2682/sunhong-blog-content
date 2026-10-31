@@ -60,7 +60,7 @@ TDM은 하나의 하드웨어 유닛을 여러 시간대에 다른 데이터로 
 
 자세한 설명은 Radix-4에 있습니다. 설계 방법이 크게 다르지 않습니다.
 
-[Radix-4 설명 보러가기](https://radic2682.github.io/project/hardware%20project/2023/12/27/Booth_multiplier_r4.html)
+[Radix-4 설명 보러가기](post:01HJM94A00V6YP4RXA0WMNCGGA)
 
 Radix-4와 비교한 주요 차이점:
 - 인코더가 3비트 + 1 = 4비트 윈도우로 확장

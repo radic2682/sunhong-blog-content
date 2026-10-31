@@ -217,7 +217,7 @@ GPIO를 제어하기 위해 import 해주었습니다.
 
 그림 23는 정의한 핀들을 GPIO 설정을 통해 input, out mode를 설정하고, pull-up, down mode를 지정해주는 코드입니다.
 
-(https://github.com/radic2682/radic2682.github.io/assets/11177959/3a9c065d-93c6-4439-8a4c-8e576b6c6b7d)
+![그림 23 핀과 GPIO 설정|medium](/img/01HG4ET100AYM7JVXNQB4X62XV/d35dbb71161e.webp)
 
 <center>그림 23 핀과 GPIO 설정</center>
 

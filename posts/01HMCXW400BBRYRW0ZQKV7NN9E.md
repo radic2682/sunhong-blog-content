@@ -4,7 +4,7 @@ slug: "cmos-transistor-basics"
 title: "CMOS 트랜지스터 동작 원리: PN 접합부터 nMOS/pMOS까지"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "CMOS, Compund Gate, Inverter, Facrication, Layout"
+summary: "CMOS, Compound Gate, Inverter, Fabrication, Layout"
 thumbnail: "/img/01HMCXW400BBRYRW0ZQKV7NN9E/0a1508be335b.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

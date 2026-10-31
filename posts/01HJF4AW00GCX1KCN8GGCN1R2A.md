@@ -4,7 +4,7 @@ slug: "arm-assembly-basics"
 title: "ARM 어셈블리 프로그래밍 기초: 명령어 형식과 산술·논리 연산"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "ARM Aseembly, indexing"
+summary: "ARM Assembly, indexing"
 thumbnail: "/img/01HJF4AW00GCX1KCN8GGCN1R2A/ed9a9440f0f4.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

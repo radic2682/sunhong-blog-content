@@ -54,7 +54,7 @@ Booth Encoding을 이용한 방법은 radix-4, radix-8, radix-16을 사용한 �
 Partial Product의 계산 단계가 4개로 radix-4와 다르지 않기에 더 빠르지 않다. 3Y를 처리해주기 위해 Y와 2Y를 4비트씩 더해주는 방법을 생각했다.
 
 > 이 방법에 관해서는 다른 포스트를 확인해 보기를 권장합니다.
-> [포스팅 보러가기](https://radic2682.github.io/project/hardware%20project/2023/12/27/Booth_multiplier_r8.html)
+> [포스팅 보러가기](post:01HJM94A00G4VPKA2KHMFBKTYY)
 
 ![radix-8|medium](/img/01HJM94A00V6YP4RXA0WMNCGGA/fa688593cfbd.webp){: width="500px" height=""}
 
