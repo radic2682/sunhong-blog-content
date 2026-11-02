@@ -3,7 +3,7 @@ id: "01M6EJDSNBMM4DKNDGF4PX1EYM"
 slug: "neural-network-backpropagation"
 title: "신경망과 역전파: NumPy로 직접 구현하고 하드웨어로 들여다보기"
 category: "01M6EJDSNB9ZFWAS5MYXPCQAST"
-tags: ["neural network", "backpropagation", "numpy", "mnist"]
+tags: ["neural network","backpropagation","numpy","mnist"]
 summary: "AI Note 1편. 신경망과 역전파를 식으로 유도하고 NumPy로 784-128-10 신경망을 직접 짜서 MNIST를 97.7%까지 학습했다. 같은 코드가 배치 크기에 따라 180배 빨라지는 이유를 산술 강도로 살펴본다."
 thumbnail: "/img/01M6EJDSNBMM4DKNDGF4PX1EYM/750cb9dacd03.webp"
 note: true
