@@ -8,5 +8,6 @@
   {"id":"01M651PC00H3J4W7JXTZ32PR45","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"hardware-project","name":"Hardware Project","theme":"03","icon":"/img/01M651PC00H3J4W7JXTZ32PR45/fd243e588f1f.webp","description":"FPGA, SoC, Embedded 프로젝트","order":0,"visible":true},
   {"id":"01M651PC00H447GE8N3ADKJMGZ","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"web-project","name":"Web & App Project","theme":"03","icon":"/img/01M651PC00H447GE8N3ADKJMGZ/53805fb50403.webp","description":"웹 개발 프로젝트","order":2,"visible":true},
   {"id":"01M651PC00AT7C6BNVD4N04PH1","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"other-project","name":"etc Project","theme":"03","icon":"/img/01M651PC00AT7C6BNVD4N04PH1/3f0659ea5d0a.webp","description":"기타 프로젝트","order":3,"visible":true},
-  {"id":"01M651PC004D9T04SN9SXTH5R6","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"ai-project","name":"AI Project","theme":"03","icon":"/img/01M651PC004D9T04SN9SXTH5R6/7f580519bcdc.webp","description":"AI/ML 프로젝트","order":1,"visible":true}
+  {"id":"01M651PC004D9T04SN9SXTH5R6","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"ai-project","name":"AI Project","theme":"03","icon":"/img/01M651PC004D9T04SN9SXTH5R6/7f580519bcdc.webp","description":"AI/ML 프로젝트","order":1,"visible":true},
+  {"id": "01M6EJDSNB9ZFWAS5MYXPCQAST", "parent": null, "slug": "ai-note", "name": "AI Note", "theme": "05", "description": "CNN에서 LLM까지", "order": 1, "visible": true}
 ]
