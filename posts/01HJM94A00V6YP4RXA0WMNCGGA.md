@@ -4,7 +4,7 @@ slug: "radix-4-booth-multiplier"
 title: "Radix-4 Booth 곱셈기 설계: 부분곱 축소와 TDM 적용 (Verilog)"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "Partial Product를 줄인 고성능 곱셈기 설계"
+summary: "Booth 인코딩으로 부분곱을 줄이고 TDM으로 압축하는 Radix-4 곱셈기를 Verilog로 설계했다. Booth 인코더·셀렉터, 부분곱 생성, Carry Save Adder, Kogge-Stone 최종 가산기와 정확도 검증 파형을 다룬다."
 thumbnail: "/img/01HJM94A00V6YP4RXA0WMNCGGA/6331fda84bee.webp"
 note: false
 created: "2023-12-27T09:00:00+09:00"

@@ -4,7 +4,7 @@ slug: "virtual-memory-paging"
 title: "가상 메모리 동작 원리: 페이징과 가상주소-물리주소 변환"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Paging, Page Table, TLB"
+summary: "가상 메모리 동작 원리를 정리한 노트. 페이지 단위로 가상 주소 공간을 나누는 페이징, 가상 주소에서 물리 주소로의 변환, 페이지 테이블 구성과 PTBR, TLB, 요구 페이징의 장단점을 다룬다."
 thumbnail: "/img/01HMCXW4006TP0B7RZQA6WH3VF/d807c1f2f996.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

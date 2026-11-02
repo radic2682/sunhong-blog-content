@@ -4,7 +4,7 @@ slug: "amba-apb-protocol"
 title: "AMBA APB 프로토콜 분석: 신호 구성과 Read/Write 전송 타이밍"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "AMBA3 APB Protocol"
+summary: "AMBA 3 APB 프로토콜을 정리한 노트. 저속 주변장치용 버스의 특징과 신호, 대기 상태 유무에 따른 읽기·쓰기 전송 타이밍, APB 슬레이브 상태 기계, AHB-APB 브리지, APB와 AHB 비교를 다룬다."
 thumbnail: "/img/01HMCXW4002M0NR0WHG16JXDQ1/9095b7398912.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

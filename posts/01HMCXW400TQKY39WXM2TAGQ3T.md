@@ -4,7 +4,7 @@ slug: "storage-io-bus-mttf"
 title: "스토리지와 I/O 시스템 구조: I/O 버스와 신뢰성(MTTF)"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Dependability, Register Map, Polling, Interrupt, DMA, RAID"
+summary: "컴퓨터 I/O 시스템을 정리한 노트. I/O 버스 연결과 장치별 데이터 속도, 신뢰성 지표 MTTF·MTTR과 개선 방법, I/O 레지스터 매핑, 폴링과 인터럽트, 예외와의 차이, DMA와 RAID 구성을 다룬다."
 thumbnail: "/img/01HMCXW400TQKY39WXM2TAGQ3T/f796d43c8aa0.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

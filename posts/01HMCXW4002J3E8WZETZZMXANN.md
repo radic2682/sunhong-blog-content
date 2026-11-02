@@ -4,7 +4,7 @@ slug: "computer-architecture-isa-performance"
 title: "컴퓨터 구조 기초: ISA와 추상화 계층, 성능 평가 방법론"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Instruction Set Architecture"
+summary: "컴퓨터 구조 수업 도입부를 정리한 노트. 추상 자료형(ADT)과 스택 예시, 명령어 집합 구조(ISA), Hennessy와 Patterson의 엔지니어링 방법론과 두 가지 황금 규칙, 성능 평가 방법과 설계 기법을 다룬다."
 thumbnail: "/img/01HMCXW4002J3E8WZETZZMXANN/76626e6d4927.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

@@ -4,7 +4,7 @@ slug: "arm-3-stage-pipeline"
 title: "ARM 프로세서 내부 구조: 3단 파이프라인과 명령어 실행 과정"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "ARM Operation, Organization, Stages"
+summary: "ARM 프로세서의 구성과 구현을 정리한 노트. 레지스터 파일, 배럴 시프터, ALU 등 주요 구성 요소와 3단 파이프라인, 메모리 병목, ARM9 5단 구조로의 발전, 데이터 포워딩과 다중 로드·스토어를 다룬다."
 thumbnail: "/img/01HJF4AW002CN3TSVRG4BADQK7/4524c9b9278a.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

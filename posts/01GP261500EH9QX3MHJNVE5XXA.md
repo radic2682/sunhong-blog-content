@@ -4,7 +4,7 @@ slug: "kogge-stone-adder"
 title: "Kogge-Stone 가산기 Verilog 설계: higher-valency 셀로 로직 레벨 줄이기"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "higher-valency Cell을 이용한 고성능 Kogge-Stone Adder 설계"
+summary: "로직 레벨이 가장 적은 트리 가산기인 Kogge-Stone Adder를 higher-valency 셀로 Verilog 설계했다. Bitwise·Group PG와 SUM 로직 코드, 테스트벤치 파형 검증, 성능 최적화 방법과 분석을 정리했다."
 thumbnail: "/img/01GP261500EH9QX3MHJNVE5XXA/c502f1c01bc2.webp"
 note: false
 created: "2023-01-06T09:00:00+09:00"

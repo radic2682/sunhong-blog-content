@@ -4,7 +4,7 @@ slug: "arm-assembly-basics"
 title: "ARM 어셈블리 프로그래밍 기초: 명령어 형식과 산술·논리 연산"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "ARM Assembly, indexing"
+summary: "ARM 어셈블리 프로그래밍 기초 노트. 명령어 형식과 접미사, 산술·논리·시프트·비교 연산, 즉시값 규칙, 시프트된 레지스터 피연산자, 조건 코드 설정, 주소 지정 방식과 분기·서브루틴을 예제와 함께 정리했다."
 thumbnail: "/img/01HJF4AW00GCX1KCN8GGCN1R2A/ed9a9440f0f4.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

@@ -4,7 +4,7 @@ slug: "raspberry-pi-cache-arm-vs-x86"
 title: "라즈베리파이 하드웨어 구조: 캐시 계층과 ARM vs x86 비교"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "Raspberry Pi, Linux System"
+summary: "라즈베리파이 하드웨어를 정리한 노트. BCM2711 SoC 사양, L1·L2 캐시 구성과 연관도, ARM과 x86 비교, Windows와 Linux 차이, 셸 명령어·파일 명령어·파이프·리다이렉션 같은 리눅스 기초를 다룬다."
 thumbnail: "/img/01HJF4AW005ZCGGBG1MYZTSJAH/a8e7f01f4c09.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

@@ -4,7 +4,7 @@ slug: "arm-thumb-instruction-set"
 title: "ARM 임베디드 시스템 입문: ARM과 Thumb 명령어 집합 비교"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "Instruction Set"
+summary: "ARM 임베디드 시스템 입문 노트. 임베디드 시스템의 정의와 ARM이 쓰이는 이유, ARMv4부터 도입된 16비트 Thumb 명령어와 32비트 ARM 명령어의 데이터 크기·특성 비교를 정리했다."
 thumbnail: "/img/01KEFG49P82ANGB8RSC673PD8A/3e4386efee48.webp"
 note: true
 created: "2026-01-09T04:07:57+09:00"

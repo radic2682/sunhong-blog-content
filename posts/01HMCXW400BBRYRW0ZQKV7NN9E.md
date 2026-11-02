@@ -4,7 +4,7 @@ slug: "cmos-transistor-basics"
 title: "CMOS 트랜지스터 동작 원리: PN 접합부터 nMOS/pMOS까지"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "CMOS, Compound Gate, Inverter, Fabrication, Layout"
+summary: "CMOS 기초를 정리한 노트. IC와 VLSI, 실리콘과 PN 접합, nMOS·pMOS 트랜지스터 동작과 스위치 모델, CMOS 인버터와 NAND·NOR 같은 복합 게이트, CMOS가 전력을 아끼는 원리와 공정 단면을 다룬다."
 thumbnail: "/img/01HMCXW400BBRYRW0ZQKV7NN9E/0a1508be335b.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

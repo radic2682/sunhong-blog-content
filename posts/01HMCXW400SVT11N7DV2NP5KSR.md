@@ -4,7 +4,7 @@ slug: "processor-vs-core"
 title: "프로세서와 코어의 차이: 명령어 처리 단계와 추상화 계층"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "컴퓨터 구성 요소, CPU Time"
+summary: "프로세서의 개념과 설계를 정리한 노트. 명령어 처리 단계, 고급 언어에서 기계어까지의 추상화 계층, 코어와 프로세서의 차이, 프로세서 설계 흐름, ARM Cortex 계열, 설계 트레이드오프와 ADD 명령어 실행 예를 다룬다."
 thumbnail: "/img/01HMCXW400SVT11N7DV2NP5KSR/98e57a98a686.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

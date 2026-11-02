@@ -4,7 +4,7 @@ slug: "raspberry-pi-hardware-hacking"
 title: "라즈베리파이 하드웨어 해킹 입문: GPIO, UART, I2C, SPI 통신"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "UART, I2C, SPI, pin control"
+summary: "라즈베리파이로 외부 장치를 직접 다루는 하드웨어 해킹 입문 노트. GPIO, UART, I2C, SPI 버스의 동작과 한계, wiringPi로 LED 회로 제어, BCM2835 주변장치 레지스터를 직접 조작하는 실습을 정리했다."
 thumbnail: "/img/01HJF4AW00FA5K27AC7B0K4BW2/d80d8233e0f8.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

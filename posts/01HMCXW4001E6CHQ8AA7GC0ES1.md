@@ -4,7 +4,7 @@ slug: "crossbar-bus"
 title: "크로스바 버스 구조: 공유 버스에서 Full Matrix까지 버스 아키텍처 진화"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "PL301 Structure, Arbitration Scheme"
+summary: "여러 마스터와 슬레이브를 잇는 크로스바 버스를 정리한 노트. 공유 버스에서 계층 버스, Full Matrix로의 발전, PL301 구조와 중재 방식, 파이프라인·버스트 전송, QoS, NoC 확장과 클럭 도메인 교차를 다룬다."
 thumbnail: "/img/01HMCXW4001E6CHQ8AA7GC0ES1/98ecc750a0f8.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

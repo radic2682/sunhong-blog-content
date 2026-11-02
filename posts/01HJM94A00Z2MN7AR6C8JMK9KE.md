@@ -4,7 +4,7 @@ slug: "cortex-m0-soc-robot-control"
 title: "Cortex-M0 SoC 설계: AHB-Lite 버스로 만든 다기능 로봇 제어 시스템 (Basys3)"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "Cortex-M0 프로세서를 포함하는 SOC 설계"
+summary: "Basys3 보드에 Cortex-M0와 AHB-Lite 주변장치를 묶은 SoC를 설계했다. UART로 작은 로봇을 제어하고 업 카운터, 스톱워치, 난수·곱셈기, 덧셈·뺄셈기를 실행하는 다기능 시스템의 HW·SW 구성과 결과를 담았다."
 thumbnail: "/img/01HJM94A00Z2MN7AR6C8JMK9KE/f101db64ce35.webp"
 note: false
 created: "2023-12-27T09:00:00+09:00"

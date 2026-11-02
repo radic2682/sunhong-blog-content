@@ -4,7 +4,7 @@ slug: "radix-8-booth-multiplier"
 title: "Radix-8 Booth 곱셈기 설계: 인코딩 테이블과 TDM 트레이드오프 (Verilog)"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "Partial Product를 줄인 고성능 곱셈기 설계"
+summary: "Radix-8 Booth 인코딩에 TDM을 결합한 곱셈기를 Verilog로 설계했다. Booth 알고리즘 원리, Radix에 따른 부분곱 수와 하드웨어 트레이드오프, Radix-8 인코딩 테이블, 구현과 검증, 배운 점을 정리했다."
 thumbnail: "/img/01HJM94A00G4VPKA2KHMFBKTYY/af70d3cf8de5.webp"
 note: false
 created: "2023-12-27T09:00:00+09:00"

@@ -4,7 +4,7 @@ slug: "raspberry-pi-iot-vending-machine"
 title: "라즈베리파이 IoT 자판기 만들기: Firebase 재고 관리와 도난 감지"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["raspberry_pi","firebase","linux","python"]
-summary: "데이터베이스를 이용한 IOT 자판기 설계"
+summary: "라즈베리파이로 만든 IoT 자판기 프로젝트. Firebase 데이터베이스로 재고와 수입을 원격 관리하고, 도난을 감지하면 사이렌과 함께 관리자에게 알린다. 부품 구성, 면별 하드웨어 배치, Python 제어 코드를 다룬다."
 thumbnail: "/img/01HG4ET100AYM7JVXNQB4X62XV/eb0f3fc7c854.webp"
 note: false
 created: "2023-11-26T09:00:00+09:00"

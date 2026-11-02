@@ -4,7 +4,7 @@ slug: "arm-banked-registers"
 title: "ARM 아키텍처와 레지스터 구조: 프로세서 모드별 뱅크드 레지스터"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "ARM Register, CPSR, Instruction features"
+summary: "ARM 아키텍처의 프로그래머 모델을 정리한 노트. 버전별 계보, 보이는 레지스터, 프로세서 모드별 뱅크드 레지스터, PC와 CPSR, 슈퍼바이저 모드, 로드·스토어 구조와 데이터 처리·제어 흐름 명령어를 다룬다."
 thumbnail: "/img/01HJF4AW00V4621ASZ0MXYGVT0/b0034c8c2bdd.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

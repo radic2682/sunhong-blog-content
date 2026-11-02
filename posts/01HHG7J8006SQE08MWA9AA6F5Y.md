@@ -4,7 +4,7 @@ slug: "verilog-slot-machine-lfsr"
 title: "Verilog 슬롯머신 설계: LFSR 난수 생성과 타이머 시드 (Basys3)"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "Timer를 이용한 슬롯머신 설계"
+summary: "Basys3 보드용 슬롯머신을 Verilog로 설계했다. 타이머로 LFSR에 시드를 넣어 BCD 난수 3개를 만들고, 일치 개수에 따라 입력의 2·5·10배를 출력한다. 블록도, 서브 블록 정의, 시뮬레이션 파형과 고찰을 정리했다."
 thumbnail: "/img/01HHG7J8006SQE08MWA9AA6F5Y/eacfeba19c01.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

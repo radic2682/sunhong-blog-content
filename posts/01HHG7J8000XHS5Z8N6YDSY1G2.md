@@ -4,7 +4,7 @@ slug: "android-restaurant-picker-app"
 title: "안드로이드 랜덤 맛집 추천 앱 개발: 카카오맵·네이버 지역검색 API 연동 (Kotlin)"
 category: "01M651PC00H447GE8N3ADKJMGZ"
 tags: ["kotlin","android_studio"]
-summary: "주변 음식점을 검색해서 랜덤으로 골라주는 어플 개발"
+summary: "\"오늘 뭐 먹지\"를 해결하려고 만든 안드로이드 앱 Mechu. 내 위치 주변 음식점을 네이버 지역검색 API로 찾고 버튼 하나로 랜덤 선택해 카카오맵에 보여 준다. 위치 권한, 애니메이션, 카테고리 필터, 배포 과정을 담았다."
 thumbnail: "/img/01HHG7J8000XHS5Z8N6YDSY1G2/0401ce329a0a.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

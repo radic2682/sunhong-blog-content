@@ -4,7 +4,7 @@ slug: "breadboard-computer-74ls"
 title: "74LS 로직 칩으로 만든 8비트 브레드보드 컴퓨터: CPU 동작 원리 직접 구현"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["Hardware"]
-summary: "브레드보드 위에 LS시리즈 Logic 칩으로 만든 컴퓨터"
+summary: "Ben Eater의 설계를 따라 74LS 시리즈 TTL 칩만으로 브레드보드 위에 8비트 컴퓨터를 만들었다. 클럭, 레지스터, ALU, RAM, 프로그램 카운터, 제어 유닛을 직접 배선하며 CPU의 명령어 실행 사이클을 익힌 기록이다."
 thumbnail: "/img/01HHG7J800ZKV3XJZ3Z2R04SX9/8789053c87d6.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

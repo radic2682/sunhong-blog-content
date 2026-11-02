@@ -4,7 +4,7 @@ slug: "pipelining-hazards-mips"
 title: "파이프라이닝 원리와 해저드: 5-stage MIPS 파이프라인 분석"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "5-stage Pipeline Processor, Hazard, Prediction"
+summary: "파이프라이닝 원리를 5단 MIPS 파이프라인으로 정리한 노트. 순차 실행과의 성능 비교, 구조·데이터·제어 해저드와 스톨·버블, 로드-사용 해저드, CPI 계산 예, 슈퍼파이프라인과 슈퍼스칼라를 다룬다."
 thumbnail: "/img/01HMCXW400A7SQJJNJ6V44BSAV/e4411b9b14b1.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

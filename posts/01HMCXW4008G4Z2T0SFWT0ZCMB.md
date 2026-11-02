@@ -4,7 +4,7 @@ slug: "soc-design-productivity-gap"
 title: "SoC 설계 프레임워크와 Design Productivity Gap"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "SoC Design Framework, Flow"
+summary: "SoC 설계 흐름을 정리한 노트. 공정 발전을 설계 생산성이 따라가지 못하는 Design Productivity Gap과 해법(추상화, EDA 자동화, IP 재사용), ARM 기반 SoC 예, SoC·MCU·CPU 비교, Apple SoC와 다이 크기를 다룬다."
 thumbnail: "/img/01HMCXW4008G4Z2T0SFWT0ZCMB/7d309fd9fb01.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

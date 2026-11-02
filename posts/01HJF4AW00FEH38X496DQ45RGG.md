@@ -4,7 +4,7 @@ slug: "cortex-m3-architecture"
 title: "ARM Cortex-M3 구조 분석: 하버드 아키텍처와 레지스터, xPSR"
 category: "01M651PC00PPZ9M79TYD9S0526"
 tags: []
-summary: "Cortex M3"
+summary: "ARMv7-M 기반 Cortex-M3 구조를 정리한 노트. 사양, 수정 하버드 메모리 구조, 3단 파이프라인, 범용 레지스터 R0~R12, xPSR의 APSR·IPSR·EPSR 플래그, PRIMASK·FAULTMASK·BASEPRI 특수 레지스터를 다룬다."
 thumbnail: "/img/01HJF4AW00FEH38X496DQ45RGG/df8c0aa3c3cd.webp"
 note: true
 created: "2023-12-25T09:00:00+09:00"

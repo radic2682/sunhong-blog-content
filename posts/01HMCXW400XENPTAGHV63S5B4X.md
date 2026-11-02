@@ -4,7 +4,7 @@ slug: "full-custom-standard-cell-pld"
 title: "반도체 설계 방법론 비교: Full-Custom, Standard-Cell, PLD"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "Design Methodology"
+summary: "반도체 회로 설계 공정과 SoC 설계 방법론을 정리한 노트. 사양부터 레이아웃, 검증, 제조까지의 단계와 Full-Custom·Standard-Cell·PLD 방식 비교, 내부·외부 IP와 Hard·Soft IP 통합을 다룬다."
 thumbnail: "/img/01HMCXW400XENPTAGHV63S5B4X/930d9a263a37.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

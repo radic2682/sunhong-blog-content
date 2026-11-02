@@ -4,7 +4,7 @@ slug: "barrel-shifter-comparator-multiplier"
 title: "데이터패스 연산 유닛: 배럴 시프터, 비교기, 곱셈기 설계"
 category: "01M651PC008HMQK12XE50G198W"
 tags: []
-summary: "Comparators, Shifters, Carry Save Adder, Booth Multiplier"
+summary: "프로세서 데이터패스의 연산 유닛을 정리한 노트. 배럴 시프터, 동등·크기 비교기, 배열 곱셈기와 Booth 인코딩, Wallace·Dadda 트리, 복원·비복원 나눗셈기의 구조와 면적·지연 특성을 다룬다."
 thumbnail: "/img/01HMCXW400W72D2WF48ZD1BAVM/5477fdfa62b6.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

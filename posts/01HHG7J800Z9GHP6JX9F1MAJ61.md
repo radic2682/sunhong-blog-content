@@ -4,7 +4,7 @@ slug: "power-generation-transmission-planning"
 title: "전력 계통 발전·송전 계획 최적화: 목적 함수와 제약 조건 모델링"
 category: "01M651PC00AT7C6BNVD4N04PH1"
 tags: ["Hardware"]
-summary: "전력 계통 설계"
+summary: "전력 시스템 공학 과목에서 수행한 발전·송전 계획 프로젝트. 장기 수요 증가에 맞춰 발전소 신설과 송전망 확장을 비용 최소화 문제로 모델링하고, 제약 조건, 전력 조류 계산, MILP 최적화와 시나리오 분석을 정리했다."
 thumbnail: "/img/01HHG7J800Z9GHP6JX9F1MAJ61/10ee6f05e456.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

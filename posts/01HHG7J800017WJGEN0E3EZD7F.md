@@ -4,7 +4,7 @@ slug: "differential-amplifier"
 title: "차동 증폭기 설계: 전류 미러 바이어스와 2단 구성으로 60dB 얻기 (SIMetrix)"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["circuit"]
-summary: "PMOS, NMOS를 이용한 차동 증폭기 설계"
+summary: "SIMetrix로 60dB 이상 이득의 차동 입력·단동 출력 증폭기를 설계했다. 전류 미러 바이어스로 첫 단 차동 증폭기를, 소스 결합 증폭기로 둘째 단을 구성하고 5V·100uA 조건에서 1mV 입력의 출력 파형을 확인했다."
 thumbnail: "/img/01HHG7J800017WJGEN0E3EZD7F/78ad46bd6abd.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

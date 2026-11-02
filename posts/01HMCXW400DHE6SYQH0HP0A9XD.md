@@ -4,7 +4,7 @@ slug: "arm-thumb-data-processing"
 title: "ARM Thumb 명령어 집합 분류: 데이터 처리 명령어 정리"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "Thumb/Cortex-M0 Instruction Set"
+summary: "Cortex-M0의 Thumb 명령어 집합을 종류별로 정리한 노트. 레지스터·즉시값·논리·시프트·곱셈 데이터 처리 명령어, 기본·오프셋·다중·PC 상대 로드와 스토어, 분기 명령어의 문법과 인코딩을 다룬다."
 thumbnail: "/img/01HMCXW400DHE6SYQH0HP0A9XD/03a76cbbc388.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

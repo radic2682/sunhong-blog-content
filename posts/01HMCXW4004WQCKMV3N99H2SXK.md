@@ -4,7 +4,7 @@ slug: "cortex-m0-architecture"
 title: "ARM Cortex-M0 구조: 레지스터 세트, 동작 모드, 메모리 맵"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "ARM Processor, Registers, Memory Map"
+summary: "초저전력 MCU용 ARMv6-M 코어인 Cortex-M0를 정리한 노트. 특징과 구조, 레지스터 세트, 동작 모드, 메모리 맵, 예외와 인터럽트, Thumb 명령어, 3단 파이프라인, SysTick, Cortex-M3·M4와의 비교를 다룬다."
 thumbnail: "/img/01HMCXW4004WQCKMV3N99H2SXK/9ee72b537977.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

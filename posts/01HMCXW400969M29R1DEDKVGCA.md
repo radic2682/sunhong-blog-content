@@ -4,7 +4,7 @@ slug: "memory-hierarchy-cache-design"
 title: "메모리 계층 구조와 캐시 동작 원리: Memory Wall과 캐시 설계 4대 질문"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Memory Hierarchy, Temporal/Spatial Localities, Cache"
+summary: "메모리 계층과 캐시를 정리한 노트. Memory Wall과 시간·공간 지역성, 계층 용어, 캐시 설계의 네 가지 질문(배치·식별·교체·쓰기), 직접 사상 캐시 예제, 블록 크기와 미스율 관계를 다룬다."
 thumbnail: "/img/01HMCXW400969M29R1DEDKVGCA/0767d231af20.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

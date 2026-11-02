@@ -4,7 +4,7 @@ slug: "zynq-7000-ai-accelerator"
 title: "Zynq-7000 FPGA AI 가속기 설계: CNN·FC 코어와 AXI CDMA 데이터 이동"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","C","FPGA","vivado","vitis"]
-summary: "CNN, Fully Connected 연산을 빠르게 수행하는 AI 가속기 설계"
+summary: "Zynq-7000 FPGA에 CNN·Fully Connected 연산 코어와 AXI CDMA 데이터 무버를 설계해 AI 가속기를 만들었다. 설계 흐름, 메모리 맵, 코어와 무버 검증, 5단계 AI 모델 구성까지 Vivado·Vitis 작업을 정리했다."
 thumbnail: "/img/01HH3BJN009V7SXRK5C22NCR9X/8f43ca04232b.webp"
 note: false
 created: "2023-12-08T09:00:00+09:00"

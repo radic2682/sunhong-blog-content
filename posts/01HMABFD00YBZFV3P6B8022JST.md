@@ -4,7 +4,7 @@ slug: "arduino-fire-extinguisher"
 title: "아두이노 자동소화장치 만들기: 불꽃·연기·온도 복합 감지와 IoT 알림"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["Hardware","arduino"]
-summary: "화재 대비 자동 소화 장치 설계"
+summary: "성균관대 2021 창의적 종합설계 경진대회 출품작인 아두이노 자동소화장치 쿠릉. 불꽃·연기·온도 센서를 함께 판단해 주방 화재를 일찍 감지하고 소화제를 분사하며 스마트폰으로 알리는 저비용 IoT 장치를 만들었다."
 thumbnail: "/img/01HMABFD00YBZFV3P6B8022JST/d0d89baf45a4.webp"
 note: false
 created: "2024-01-17T09:00:00+09:00"

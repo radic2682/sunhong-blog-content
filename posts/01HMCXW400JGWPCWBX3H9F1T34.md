@@ -4,7 +4,7 @@ slug: "multiprocessor-shared-memory-sync"
 title: "멀티프로세서와 공유 메모리 동기화: 임계 구역과 Producer-Consumer"
 category: "01M651PC0078NBC62J3EZDXHDQ"
 tags: []
-summary: "Shared Memory Multiprocessor, Critical-section, Network"
+summary: "멀티프로세서 구조를 정리한 노트. UMA·NUMA 공유 메모리, 합 축소 예제, 생산자-소비자와 임계 구역 문제, Test-and-Set 상호 배제와 최적화된 동기화, 메시지 패싱과 클러스터, 상호 연결 구조를 다룬다."
 thumbnail: "/img/01HMCXW400JGWPCWBX3H9F1T34/4fe26555a34b.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

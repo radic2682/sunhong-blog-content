@@ -4,7 +4,7 @@ slug: "soc-c-memory-mapped-io"
 title: "C 언어 SoC 프로그래밍: 메모리 맵 I/O 레지스터 제어"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "stack and heap, Accessing peripherals"
+summary: "C 언어로 SoC를 프로그래밍하는 방법을 정리한 노트. 메모리 맵 I/O와 volatile, 구조체 기반 레지스터 접근, 비트 설정·해제·토글·검사, 다중 비트 필드, 시작 시퀀스, 링커 스크립트, CMSIS와 인터럽트 핸들러를 다룬다."
 thumbnail: "/img/01HMCXW400BCWH19Q9S7YCMGFF/d956b27f9058.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

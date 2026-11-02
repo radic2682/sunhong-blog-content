@@ -4,7 +4,7 @@ slug: "dc-motor-pid-control"
 title: "DC 모터 위치 제어기 설계: PID와 근궤적으로 정착시간 맞추기 (MATLAB)"
 category: "01M651PC00AT7C6BNVD4N04PH1"
 tags: ["matlab"]
-summary: "서보 모터를 안정화시키기 위한 PID 제어기 설계"
+summary: "DC 서보 모터 위치 제어기를 MATLAB으로 설계했다. 감쇠비 0.4~0.7, 정착시간 1/30초 미만, 위상 여유 40도 이상 조건에서 근궤적으로 PID 이득을 구하고 조건 충족과 최적값을 확인한 과정과 고찰을 담았다."
 thumbnail: "/img/01HHG7J800D9SVQ369C23WZMNJ/b1745e513457.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"

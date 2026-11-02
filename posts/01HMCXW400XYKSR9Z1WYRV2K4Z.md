@@ -4,7 +4,7 @@ slug: "cortex-m-nvic-interrupts"
 title: "Cortex-M NVIC 인터럽트 처리: 벡터 테이블과 예외 우선순위"
 category: "01M651PC003HYJYHCQPHT4KAWF"
 tags: []
-summary: "Polling vs. Interrupt, Pre-emption, Interrupt Controller"
+summary: "Cortex-M의 인터럽트 처리를 정리한 노트. 인터럽트와 예외의 차이, NVIC의 벡터·중첩 인터럽트, 벡터 테이블과 처리 순서, 예외 우선순위와 선점, Tail-Chaining·Late Arrival, PRIMASK·FAULTMASK·BASEPRI 마스킹을 다룬다."
 thumbnail: "/img/01HMCXW400XYKSR9Z1WYRV2K4Z/b004412d3647.webp"
 note: true
 created: "2024-01-18T09:00:00+09:00"

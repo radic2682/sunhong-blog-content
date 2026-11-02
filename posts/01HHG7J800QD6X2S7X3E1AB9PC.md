@@ -4,7 +4,7 @@ slug: "wallace-tree-multiplier"
 title: "Wallace Tree 곱셈기 Verilog 설계: 반가산기·전가산기로 8비트 병렬 곱셈"
 category: "01M651PC00H3J4W7JXTZ32PR45"
 tags: ["verilog","vivado"]
-summary: "병렬 곱셈 알고리즘 이용한 곱셈기 설계"
+summary: "반가산기와 전가산기로 부분합을 단계별로 줄이는 Wallace Tree 구조로 8비트 병렬 곱셈기를 Verilog 설계했다. 16비트 곱을 내는 계산 과정, 설계 흐름, 테스트벤치와 전체 코드를 정리했다."
 thumbnail: "/img/01HHG7J800QD6X2S7X3E1AB9PC/f7a0960134a5.webp"
 note: false
 created: "2023-12-13T09:00:00+09:00"
