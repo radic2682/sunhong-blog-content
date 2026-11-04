@@ -9,7 +9,7 @@ thumbnail: "/img/01M6K4KV24R30XMDZZ5JT31QZP/651239ebf905.webp"
 note: true
 order: 2
 created: "2026-11-04T20:20:28+09:00"
-updated: "2026-11-04T20:20:28+09:00"
+updated: "2026-11-04T21:06:45+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -202,7 +202,7 @@ RV32I 디코더는 opcode의 [6:2]를 보고 형식을 정한다. RV32I가 쓰�
 
 ## 참고 문헌
 
-- The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture, Version 20240411. 2장 RV32I(2.2 프로그래머 모델, 2.3 명령어 형식, 2.9 HINT), 1.5 명령어 길이 인코딩. https://github.com/riscv/riscv-isa-manual
+- The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture, Version 20240411. 2장 RV32I(2.1 프로그래머 모델, 2.2 명령어 형식, 2.3 즉시값 인코딩, 2.9 HINT), 1.5 명령어 길이 인코딩. https://github.com/riscv/riscv-isa-manual
 - D. Patterson, A. Waterman, *The RISC-V Reader: An Open Architecture Atlas*, 2017. 2장 RV32I
 - D. Harris, S. Harris, *Digital Design and Computer Architecture: RISC-V Edition*, Morgan Kaufmann, 2021. 6.4 기계어, 7.3 즉시값 확장
 - RISC-V ELF psABI (레지스터 ABI 이름). https://github.com/riscv-non-isa/riscv-elf-psabi-doc
