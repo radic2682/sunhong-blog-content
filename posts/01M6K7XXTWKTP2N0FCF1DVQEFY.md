@@ -5,11 +5,11 @@ title: "M 확장 구현: 곱셈·나눗셈기 연동, 0 나누기 결과 규칙 
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","multiplier","divider","m extension","python model"]
 summary: "RISC-V 19편. M 확장 곱셈·나눗셈기를 비트 정확 Python 모델로 구현했다. 33비트 곱셈기 하나로 mulh 계열 셋을 처리하고, 30만 쌍과 QEMU 648개에서 불일치 0, 음수를 0으로 나눌 때의 함정(5,039개 불일치)을 찾았다."
-thumbnail: "/img/01M6K7XXTWKTP2N0FCF1DVQEFY/5336aa1c66b9.webp"
+thumbnail: "/img/01M6K7XXTWKTP2N0FCF1DVQEFY/5f032617fc19.webp"
 note: true
 order: 19
 created: "2026-11-04T21:18:28+09:00"
-updated: "2026-11-04T21:18:28+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -65,7 +65,7 @@ funct3[2]가 곱셈(0)과 나눗셈(1)을 가른다. 디코더는 이 비트 하
 
 `mulh`·`mulhsu`·`mulhu`는 같은 비트를 서로 다르게 해석해 곱한다. 곱셈기를 셋 둘 수는 없으니 해석 차이를 입력 쪽에서 흡수한다. 각 피연산자 위에 1비트를 붙이는데, 부호 있게 읽을 때는 비트 31을 복사하고(부호 확장), 부호 없이 읽을 때는 0을 붙인다. 그러면 32비트 무부호 값도 33비트 부호 있는 값으로 정확히 표현되고, 곱셈기는 언제나 33×33 부호 있는 곱셈만 하면 된다.
 
-![rs1과 rs2 위에 1비트를 붙여 33비트로 늘리면 33×33 부호 있는 곱셈기 하나가 mul·mulh·mulhsu·mulhu를 모두 처리한다|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/5336aa1c66b9.webp)
+![rs1과 rs2 위에 1비트를 붙여 33비트로 늘리면 33×33 부호 있는 곱셈기 하나가 mul·mulh·mulhsu·mulhu를 모두 처리한다|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/5f032617fc19.webp)
 
 같은 비트 `0xffffffff × 0xffffffff`를 세 가지로 읽어 보자. QEMU에서 실행한 결과다.
 

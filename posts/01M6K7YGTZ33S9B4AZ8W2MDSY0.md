@@ -5,11 +5,11 @@ title: "FENCE.I와 자기 수정 코드: 명령어 쪽에서 지켜야 할 것"
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","fence.i","self-modifying code","instruction cache","qemu"]
 summary: "RISC-V 22편. FENCE.I와 자기 수정 코드를 다룬다. QEMU는 fence.i 없이도 다른 곳에 쓴 코드는 새 것을, 실행 중인 블록 안은 옛 것을 실행했다. 명령어 모델 16가지 조합으로 코어 구조별 FENCE.I 최소 구현을 확인했다."
-thumbnail: "/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/d66e3efd6c1c.webp"
+thumbnail: "/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/d6c8f8a51152.webp"
 note: true
 order: 22
 created: "2026-11-04T21:18:44+09:00"
-updated: "2026-11-04T21:18:44+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -32,7 +32,7 @@ updated: "2026-11-04T21:18:44+09:00"
 | ② I$ | 예전에 그 주소를 실행해 줄이 남아 있다 |
 | ③ 이미 가져온 명령어 | 5단 파이프라인의 IF·ID에 있는 명령어, 미리 가져오기(prefetch) 버퍼, 21편의 페치 버퍼 |
 
-![sw로 쓴 새 코드는 D$로 가고, 명령어 쪽은 I$와 이미 가져온 명령어에 옛 비트를 들고 있을 수 있다. FENCE.I는 D$ 내리기, I$ 무효화, 플러시를 순서대로 한다|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/d66e3efd6c1c.webp)
+![sw로 쓴 새 코드는 D$로 가고, 명령어 쪽은 I$와 이미 가져온 명령어에 옛 비트를 들고 있을 수 있다. FENCE.I는 D$ 내리기, I$ 무효화, 플러시를 순서대로 한다|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/d6c8f8a51152.webp)
 
 ③은 캐시가 없는 가장 단순한 코어에도 있다. 바로 다음 명령어를 고치는 경우를 손으로 따라가 보자. 실습 코드의 시험 2는 이렇다.
 

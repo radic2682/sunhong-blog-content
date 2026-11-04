@@ -5,11 +5,11 @@ title: "즉시값 생성기와 RISC-V 단일 사이클 데이터패스"
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","datapath","immediate generator","single-cycle","qemu"]
 summary: "RISC-V 16편. 2편의 선택기 표를 즉시값 생성기 회로로 옮기고 단일 사이클 데이터패스를 조립했다. 프로그램 5개, 명령어 1,076,364개를 실행해 QEMU와 pc 열·레지스터가 모두 같았고, 분기가 20.0%(그중 58.5% taken)였다."
-thumbnail: "/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/40508665dee4.webp"
+thumbnail: "/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/480665d50f94.webp"
 note: true
 order: 16
 created: "2026-11-04T21:27:10+09:00"
-updated: "2026-11-04T21:27:10+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -59,7 +59,7 @@ RTL로 옮길 때도 줄 하나가 `assign` 하나다. 2편 방식(형식마다 
 
 ## 2. 데이터패스 블록
 
-![단일 사이클 데이터패스는 PC·명령어 메모리·레지스터 파일·즉시값 생성기·ALU·데이터 메모리를 선택기로 잇고, 다음 pc는 pc+4·pc+imm·(rs1+imm)&~1 중에서 고른다|full](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/40508665dee4.webp)
+![단일 사이클 데이터패스는 PC·명령어 메모리·레지스터 파일·즉시값 생성기·ALU·데이터 메모리를 선택기로 잇고, 다음 pc는 pc+4·pc+imm·(rs1+imm)&~1 중에서 고른다|full](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/480665d50f94.webp)
 
 블록마다 하는 일과 크기를 정리한다.
 

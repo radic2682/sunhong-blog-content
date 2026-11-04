@@ -5,11 +5,11 @@ title: "A 확장: LR/SC, AMO, aq·rl"
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","atomics","lr/sc","amo","qemu"]
 summary: "RISC-V 8편. A 확장의 LR/SC 예약과 실패 조건, AMO 9종, aq·rl 비트를 QEMU에서 확인했다. 하트 8개가 카운터를 경쟁하면 일반 증가는 22%만 남고 원자 방식은 모두 정확했으며, QEMU가 같은 값 재저장 뒤 sc를 성공시키는 점도 찾았다."
-thumbnail: "/img/01M6K81F9GCAPQHS1JDRSB437W/e735e34d9fe1.webp"
+thumbnail: "/img/01M6K81F9GCAPQHS1JDRSB437W/fc642597d40c.webp"
 note: true
 order: 8
 created: "2026-11-04T21:20:23+09:00"
-updated: "2026-11-04T21:20:23+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -59,7 +59,7 @@ A 확장은 비준 버전 2.1에서 두 하위 확장으로 나뉘었다. 명세
 
 `lr.w rd, (rs1)`(load-reserved)은 워드를 읽어 `rd`에 넣고, 그 주소를 포함하는 **예약 집합(reservation set)**을 등록한다. `sc.w rd, rs2, (rs1)`(store-conditional)은 예약이 아직 유효하고 주소가 예약 집합 안일 때만 `rs2`를 쓴다. 성공하면 `rd`에 0, 실패하면 0이 아닌 값을 넣고 메모리는 건드리지 않는다. 성공이든 실패든 `sc`를 실행하면 그 하트의 예약은 사라진다.
 
-![하트 1의 sc.w가 먼저 성공해 6을 쓰면 하트 0의 예약이 무효가 되어 하트 0의 sc.w는 1을 돌려주고, 다시 lr.w로 6을 읽어 7을 쓴다|full](/img/01M6K81F9GCAPQHS1JDRSB437W/e735e34d9fe1.webp)
+![하트 1의 sc.w가 먼저 성공해 6을 쓰면 하트 0의 예약이 무효가 되어 하트 0의 sc.w는 1을 돌려주고, 다시 lr.w로 6을 읽어 7을 쓴다|full](/img/01M6K81F9GCAPQHS1JDRSB437W/fc642597d40c.webp)
 
 실패 코드는 지금 1만 정의되어 있다("이유 불명"). 명세는 1을 고른 이유를 "단순한 구현이 `slt`·`sltu`용으로 이미 있는 선택기로 낼 수 있게"라고 설명한다. 이식성 있는 소프트웨어는 0인지 아닌지만 봐야 한다.
 
@@ -139,7 +139,7 @@ mcause 6은 "스토어/AMO 주소 정렬 예외", 4는 "로드 주소 정렬 예
 | rl | 해제(release) | 앞의 메모리 접근이 이 명령어보다 늦게 보이지 않는다 |
 | aq+rl | 순차 일관 | 앞뒤 어느 쪽으로도 순서가 바뀌지 않는다 |
 
-![amoswap.w.aq는 임계 구역 접근이 위로 올라가는 것을, amoswap.w.rl은 아래로 내려가는 것을 막고, 락 바깥 접근이 안으로 들어오는 것은 허용한다|full](/img/01M6K81F9GCAPQHS1JDRSB437W/31ef2ef87bc6.webp)
+![amoswap.w.aq는 임계 구역 접근이 위로 올라가는 것을, amoswap.w.rl은 아래로 내려가는 것을 막고, 락 바깥 접근이 안으로 들어오는 것은 허용한다|full](/img/01M6K81F9GCAPQHS1JDRSB437W/70100e5fd7d9.webp)
 
 그림처럼 aq는 아래에서 위로 넘어오는 것만, rl은 위에서 아래로 넘어가는 것만 막는다. 락 바깥의 접근이 임계 구역 안으로 들어오는 것은 허용된다. 이것이 `fence`보다 싼 이유다. 명세는 획득을 `fence r,rw`로, 해제를 `fence rw,w`로도 만들 수 있지만 그러면 불필요한 순서까지 강제한다고 설명한다. 순서는 같은 주소 영역(메모리 또는 I/O) 안에서만 적용되고, 두 영역에 걸친 순서는 `fence`로 지정한다.
 

@@ -5,11 +5,11 @@ title: "RISC-V 5단 파이프라인: 포워딩·스톨 조건식, x0 처리"
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","pipeline","forwarding","hazard","x0"]
 summary: "RISC-V 17편. 5단 파이프라인 모델로 같은 프로그램을 돌려 QEMU와 일치시키고 CPI를 쟀다. 포워딩을 켜면 1.37, 끄면 1.83이었다. rd≠0 조건을 빼면 HINT ntl.all을 쓰는 프로그램이 0 대신 0x80000000을 썼다."
-thumbnail: "/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/64b8319ed974.webp"
+thumbnail: "/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/f53f602eeedc.webp"
 note: true
 order: 17
 created: "2026-11-04T21:27:14+09:00"
-updated: "2026-11-04T21:27:14+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -52,7 +52,7 @@ CRC-32 안쪽 루프를 GCC가 이렇게 만들었다.
 
 `srai`가 EX에 있을 때 `slli`는 MEM에 있다. `slli`의 결과는 EX/MEM 레지스터에 있지만 레지스터 파일에는 아직 없다. `srai`가 ID에서 읽은 a1은 옛 값이다. 이것이 RAW(쓰기 후 읽기) 데이터 해저드다.
 
-![5단 파이프라인에서 EX/MEM과 MEM/WB의 결과를 EX의 ALU 입력으로 되돌리는 포워딩 경로와, 로드-사용일 때 앞단을 멈추는 해저드 검출기|full](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/64b8319ed974.webp)
+![5단 파이프라인에서 EX/MEM과 MEM/WB의 결과를 EX의 ALU 입력으로 되돌리는 포워딩 경로와, 로드-사용일 때 앞단을 멈추는 해저드 검출기|full](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/f53f602eeedc.webp)
 
 해결은 두 가지다. 값이 레지스터 파일에 닿을 때까지 기다리거나(스톨), 이미 계산된 값을 EX로 되돌려 주거나(포워딩)다. 생산자와 소비자의 거리별로 정리하면 다음과 같다.
 

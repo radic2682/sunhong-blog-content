@@ -5,11 +5,11 @@ title: "메모리 모델: RVWMO, FENCE의 의미, Ztso"
 category: "01M6K19SKHFQ3SCEWS4D97Y48R"
 tags: ["risc-v","memory model","rvwmo","fence","ztso"]
 summary: "RISC-V 9편. RVWMO 메모리 모델의 보존 프로그램 순서, fence의 pred·succ, aq·rl, Ztso를 정리했다. 리트머스 7개를 SC·TSO·RVWMO로 열거해 MP·SB·LB의 허용 여부를 세고, GCC의 C11 원자 연산 대응을 RVWMO와 Ztso로 비교했다."
-thumbnail: "/img/01M6K81NRBF6X8ZWVXVT17VNRE/6a86c7777904.webp"
+thumbnail: "/img/01M6K81NRBF6X8ZWVXVT17VNRE/3476c5b4a5bb.webp"
 note: true
 order: 9
 created: "2026-11-04T21:20:28+09:00"
-updated: "2026-11-04T21:20:28+09:00"
+updated: "2026-11-04T21:46:36+09:00"
 ---
 :::note
 **이 글의 핵심 3줄**
@@ -38,7 +38,7 @@ lw r1 ← y       lw r2 ← x
 
 이 두 하트의 명령어를 차례로 끼워 넣는 방법은 4!/(2!·2!) = 6가지다. 6가지를 모두 따라가면 (r1, r2)는 (0, 1) 1번, (1, 0) 1번, (1, 1) 4번 나온다. 어떻게 끼워 넣어도 적어도 한 스토어는 두 로드보다 먼저이므로 (0, 0)은 나올 수 없다. 이렇게 "모든 하트의 접근을 어떤 한 줄로 끼워 넣은 것과 같다"고 보는 모델이 순차 일관성(SC, sequential consistency)이다.
 
-![하트 0과 하트 1의 스토어가 각자 저장 버퍼에 머무는 동안 두 로드가 먼저 메모리에서 0을 읽어, 순차 일관성에서는 불가능한 r1 = r2 = 0이 나온다|full](/img/01M6K81NRBF6X8ZWVXVT17VNRE/6a86c7777904.webp)
+![하트 0과 하트 1의 스토어가 각자 저장 버퍼에 머무는 동안 두 로드가 먼저 메모리에서 0을 읽어, 순차 일관성에서는 불가능한 r1 = r2 = 0이 나온다|full](/img/01M6K81NRBF6X8ZWVXVT17VNRE/3476c5b4a5bb.webp)
 
 저장 버퍼가 있으면 (0, 0)이 나온다. 두 스토어가 버퍼에 머무는 동안 두 로드가 메모리에서 0을 읽으면 된다. 이 시험을 SB(store buffering)라 부른다. 하드웨어 최적화 하나가 SC를 깨뜨린 것이다. 메모리 모델은 이런 결과 중 무엇을 허용하고 무엇을 금지할지 ISA 차원에서 정한다. 허용 범위가 넓을수록(약한 모델) 하드웨어는 자유롭고, 소프트웨어는 필요한 곳에 순서를 직접 요구해야 한다.
 
