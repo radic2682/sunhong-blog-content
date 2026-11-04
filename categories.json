@@ -10,6 +10,6 @@
   {"id":"01M651PC00AT7C6BNVD4N04PH1","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"other-project","name":"etc Project","theme":"03","icon":"/img/01M651PC00AT7C6BNVD4N04PH1/3f0659ea5d0a.webp","description":"기타 프로젝트","order":3,"visible":true},
   {"id":"01M651PC004D9T04SN9SXTH5R6","parent":"01M651PC0020GH6KP56GXEHMCY","slug":"ai-project","name":"AI Project","theme":"03","icon":"/img/01M651PC004D9T04SN9SXTH5R6/7f580519bcdc.webp","description":"AI/ML 프로젝트","order":1,"visible":true},
   {"id":"01M6EJDSNB9ZFWAS5MYXPCQAST","parent":null,"slug":"ai-note","name":"AI Note","theme":"05","icon":"/img/01M6EJDSNB9ZFWAS5MYXPCQAST/b8dc238c63bd.webp","description":"CNN에서 LLM까지","order":1,"visible":true},
-  {"id":"01M6K19SKFK0XC7VWWNN5ATX8P","parent":null,"slug":"digital-design","name":"Digital Design","theme":"02","description":"RISC-V, Cache, Bus 설계","order":4,"visible":false},
-  {"id":"01M6K19SKHFQ3SCEWS4D97Y48R","parent":"01M6K19SKFK0XC7VWWNN5ATX8P","slug":"risc-v","name":"RISC-V","theme":"02","description":"ISA에서 설계까지","order":1,"visible":false}
+  {"id":"01M6K19SKFK0XC7VWWNN5ATX8P","parent":null,"slug":"digital-design","name":"Digital Design","theme":"02","description":"RISC-V, Cache, Bus 설계","order":4,"visible":true},
+  {"id":"01M6K19SKHFQ3SCEWS4D97Y48R","parent":"01M6K19SKFK0XC7VWWNN5ATX8P","slug":"risc-v","name":"RISC-V","theme":"02","description":"ISA에서 설계까지","order":1,"visible":true}
 ]
