@@ -30,7 +30,7 @@ lw r1 ← y       lw r2 ← x
 
 There are 4!/(2!·2!) = 6 ways to interleave these two harts' instructions. Following all 6, (r1, r2) comes out as (0, 1) once, (1, 0) once, and (1, 1) four times. However they are interleaved, at least one store comes before both loads, so (0, 0) is impossible. A model that says "all harts' accesses are equivalent to some single interleaving" is sequential consistency (SC).
 
-![While the stores of hart 0 and hart 1 sit in their store buffers, both loads read 0 from memory first, producing r1 = r2 = 0, which is impossible under sequential consistency|full](/img/01M6K81NRBF6X8ZWVXVT17VNRE/3476c5b4a5bb.webp)
+![While the stores of hart 0 and hart 1 sit in their store buffers, both loads read 0 from memory first, producing r1 = r2 = 0, which is impossible under sequential consistency|full](/img/01M6K81NRBF6X8ZWVXVT17VNRE/a00edc22c1ca.webp)
 
 With store buffers, (0, 0) can happen. Both loads just need to read 0 from memory while both stores sit in their buffers. This test is called SB (store buffering). A single hardware optimization broke SC. A memory model decides at the ISA level which of these outcomes are allowed and which are forbidden. The wider the allowed range (a weaker model), the freer the hardware, and the more software has to request ordering explicitly where it needs it.
 
@@ -147,7 +147,7 @@ def preserved(model, prog, i, j):   # i < j
 
 This is not a full implementation of RVWMO. It is simplified to give the same answers as the spec appendix's conclusions for these tests, which have two harts and no mixed same-address accesses. As a correctness check, I fed in the example test from spec appendix A.2 (hart 0: writes 1 and 2 to x, reads it, then writes 3; hart 1: writes 4 and 5 to x). The spec says the value hart 0 reads is one of 2, 4, or 5, and 1 and 3 are impossible, and the enumerator's answer was exactly {2, 4, 5}.
 
-![Enumerating all 7 litmus tests, RVWMO allows the weak outcome in MP, SB, SB+fence.tso, and LB, TSO allows it only in SB and SB+fence.tso, and adding a fence or data dependency makes all three models forbid it|xl](/img/01M6K81NRBF6X8ZWVXVT17VNRE/35310e469700.webp)
+![Enumerating all 7 litmus tests, RVWMO allows the weak outcome in MP, SB, SB+fence.tso, and LB, TSO allows it only in SB and SB+fence.tso, and adding a fence or data dependency makes all three models forbid it|xl](/img/01M6K81NRBF6X8ZWVXVT17VNRE/63aea02dda76.webp)
 
 | Test | SC | TSO | RVWMO |
 |---|---|---|---|

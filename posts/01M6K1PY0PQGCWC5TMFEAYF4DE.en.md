@@ -43,7 +43,7 @@ The fifth row is a good example of "separation of architecture from implementati
 
 ## 3. How the Specification Is Organized
 
-![The RISC-V specification is split into two volumes, Unprivileged and Privileged, plus specifications outside the ISA such as ABI, SBI, and Debug; a single chip is a combination chosen from these|full](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/ec6b27b3b50f.webp)
+![The RISC-V specification is split into two volumes, Unprivileged and Privileged, plus specifications outside the ISA such as ABI, SBI, and Debug; a single chip is a combination chosen from these|full](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/2c1538faf031.webp)
 
 The RISC-V specification comes in three big chunks (this series is based on the April 2024 edition, document date 20240411).
 
@@ -65,7 +65,7 @@ Each specification carries a status. Draft means it is still changing, frozen me
 
 ## 4. Reading the Names
 
-![rv64gc reads as rv + 64 + g + c, and the canonical name GCC 16 records in the object file is rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0 …|full](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/4438851d53b0.webp)
+![rv64gc reads as rv + 64 + g + c, and the canonical name GCC 16 records in the object file is rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0 …|full](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/6ad8ee79099f.webp)
 
 RISC-V cores and compiler options carry names like `rv32imc` and `rv64gc`. Such a name literally spells out the ISA that the core supports. The reading rules are simple.
 
@@ -128,7 +128,7 @@ for march, mabi in CFGS:
 
 `-mabi` is the ABI that determines which registers carry function arguments. Combinations without floating-point registers use `ilp32`, those with F use `ilp32f`, and 64-bit with D uses `lp64d`.
 
-![The same 7 C functions shrink from 972 bytes on rv32i to 772 bytes on rv32im, 502 bytes on rv32imc, and 402 bytes on rv32imfc_zba_zbb|xl](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/a2e478033eb8.webp)
+![The same 7 C functions shrink from 972 bytes on rv32i to 772 bytes on rv32im, 502 bytes on rv32imc, and 402 bytes on rv32imfc_zba_zbb|xl](/img/01M6K1PY0PQGCWC5TMFEAYF4DE/acb6f9ef9322.webp)
 
 Let's follow the results one extension at a time.
 

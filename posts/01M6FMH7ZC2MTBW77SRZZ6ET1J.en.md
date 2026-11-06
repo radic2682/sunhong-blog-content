@@ -24,7 +24,7 @@ A neural network is one way to build this "adjustable function." Its smallest un
 
 ## 2. A single neuron: weighted sum and activation
 
-![Structure of a single neuron. Inputs x1, x2 and the constant 1 are multiplied by weights w1, w2, b respectively and summed into the weighted sum z, which passes through a step function that outputs 1 if z is greater than 0 and 0 otherwise|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/a74a9171fff5.webp)
+![Structure of a single neuron. Inputs x1, x2 and the constant 1 are multiplied by weights w1, w2, b respectively and summed into the weighted sum z, which passes through a step function that outputs 1 if z is greater than 0 and 0 otherwise|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/2cb80231cc41.webp)
 
 A single neuron does its work in two steps.
 
@@ -58,7 +58,7 @@ $$w \leftarrow w + \eta\,(\text{target} - \text{prediction})\,x, \qquad b \lefta
 
 Starting from small random values with $\eta = 0.5$, I trained it separately on AND, OR, and XOR (1 only when the two inputs differ).
 
-![Decision boundaries learned by the perceptron. For AND and OR, a single line exactly separates the black dots (1) from the white dots (0) for 100% accuracy, while for XOR no line can separate the two diagonally placed pairs, so it fails for all 20 epochs|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/85e3ea5db0b4.webp)
+![Decision boundaries learned by the perceptron. For AND and OR, a single line exactly separates the black dots (1) from the white dots (0) for 100% accuracy, while for XOR no line can separate the two diagonally placed pairs, so it fails for all 20 epochs|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/4d015f61cb89.webp)
 
 | Problem | Result | Epochs taken | Learned weights $(w_1, w_2, b)$ |
 |---|---|---|---|
@@ -72,7 +72,7 @@ For AND and OR, as in the figure, a single line separates the black dots (1) fro
 
 The solution is to **stack neurons into layers**. Put into words, XOR is "at least one of the two is 1 (OR), but not both are 1 (AND)." In Section 2, OR and AND could each be built with a single neuron. So place an OR neuron and an AND neuron in the first layer, and compute "OR and not AND" in the second layer.
 
-![A two-layer network that solves XOR. Inputs x1, x2 go into an OR neuron (bias −0.5) and an AND neuron (bias −1.5), and the output neuron gives a weight of +1 to OR and −1 to AND and adds a bias of −0.5 to produce XOR|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/7cfac80caf17.webp)
+![A two-layer network that solves XOR. Inputs x1, x2 go into an OR neuron (bias −0.5) and an AND neuron (bias −1.5), and the output neuron gives a weight of +1 to OR and −1 to AND and adds a bias of −0.5 to produce XOR|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/2937f2641ee8.webp)
 
 Trace all four inputs by hand and you really do get XOR. The output neuron is $z = h_1 - h_2 - 0.5$.
 
@@ -93,7 +93,7 @@ $$y = W_2(W_1 x + b_1) + b_2 = \underbrace{(W_2 W_1)}_{W}\,x + \underbrace{(W_2 
 
 No matter how many layers you stack, the result is equivalent to a single line (plane), so it cannot solve XOR. The nonlinear functions between layers are what make "curved boundaries" possible.
 
-![Four common activation functions. The step function jumps abruptly from 0 to 1 at 0, the sigmoid changes smoothly between 0 and 1, tanh changes between −1 and 1, and ReLU outputs 0 for negative inputs and passes positive inputs through unchanged|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/fe9f33070642.webp)
+![Four common activation functions. The step function jumps abruptly from 0 to 1 at 0, the sigmoid changes smoothly between 0 and 1, tanh changes between −1 and 1, and ReLU outputs 0 for negative inputs and passes positive inputs through unchanged|full](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/12f4fc7c7456.webp)
 
 | Function | Formula | Characteristics |
 |---|---|---|
@@ -149,7 +149,7 @@ Computing just three steps by hand with $\eta = 0.1$ looks like this.
 
 As we approach the minimum, the gradient shrinks and the steps naturally get smaller too. But change the learning rate and the motion becomes completely different.
 
-![Gradient descent under different learning rates. 0.1 approaches 3 slowly, 0.45 arrives almost at 3 in two steps, 0.9 converges while bouncing back and forth across 3, and 1.05 diverges as the bounces grow wider|xl](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/e5c86ef95377.webp)
+![Gradient descent under different learning rates. 0.1 approaches 3 slowly, 0.45 arrives almost at 3 in two steps, 0.9 converges while bouncing back and forth across 3, and 1.05 diverges as the bounces grow wider|xl](/img/01M6FMH7ZC2MTBW77SRZZ6ET1J/9e0f7061866f.webp)
 
 | Learning rate | $w$ over the first few steps | Result |
 |---|---|---|

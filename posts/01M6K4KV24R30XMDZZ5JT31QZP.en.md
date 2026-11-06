@@ -32,7 +32,7 @@ The single rule that `x0` is always 0 saves many instructions. The register copy
 
 ## 2. The Overall Layout of a 32-Bit Instruction
 
-![The six RV32I instruction formats: the register number fields are in the same place in every format, and the immediate's sign bit is always bit 31|full](/img/01M6K4KV24R30XMDZZ5JT31QZP/651239ebf905.webp)
+![The six RV32I instruction formats: the register number fields are in the same place in every format, and the immediate's sign bit is always bit 31|full](/img/01M6K4KV24R30XMDZZ5JT31QZP/954e1da0dde6.webp)
 
 Start with the fields common to all formats.
 
@@ -89,7 +89,7 @@ A few things stand out in the table.
 
 I counted the effect myself. For each output bit, I gathered the sources across the five formats (I, S, B, U, J) and took the number of distinct sources as the multiplexer input count (the constant 0 also counts as one input). For comparison I defined a "naive layout" that uses the same bit fields but fills the immediate in order from the low bit up: B puts imm[12:1] in order into S's fields, and J puts imm[20:1] in order into inst[31:12].
 
-![Counting multiplexer inputs per immediate output bit gives a total of 70 for the RISC-V layout and 98 for the naive in-order layout|xl](/img/01M6K4KV24R30XMDZZ5JT31QZP/5113473079e9.webp)
+![Counting multiplexer inputs per immediate output bit gives a total of 70 for the RISC-V layout and 98 for the naive in-order layout|xl](/img/01M6K4KV24R30XMDZZ5JT31QZP/128864b791a5.webp)
 
 The RISC-V layout had 70 inputs in total, with the widest multiplexer at 4 inputs (imm[11]). The naive layout had 98, with the widest at 5 inputs. The difference is largest in the low bits. In the naive layout, imm[1] of B and J is offset by one position from S and I, so almost every bit from imm[1] to imm[11] gains one more source. Fewer multiplexer inputs mean less area and also a shorter path through the immediate generator. That path easily ends up on the critical path of the decode stage.
 

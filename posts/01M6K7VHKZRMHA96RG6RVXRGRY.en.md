@@ -22,7 +22,7 @@ With C, the instruction alignment requirement also changes from 4 bytes to 2 byt
 
 ## 2. The Nine 16-bit Formats
 
-![The C extension has nine 16-bit formats, CR·CI·CSS·CIW·CL·CS·CA·CB·CJ, and the 3-bit register fields use only two positions, [9:7] and [4:2], in every format|full](/img/01M6K7VHKZRMHA96RG6RVXRGRY/348b68b2108f.webp)
+![The C extension has nine 16-bit formats, CR·CI·CSS·CIW·CL·CS·CA·CB·CJ, and the 3-bit register fields use only two positions, [9:7] and [4:2], in every format|full](/img/01M6K7VHKZRMHA96RG6RVXRGRY/00492036e596.webp)
 
 There were 6 32-bit formats, but there are 9 16-bit formats. The fields are so narrow that each group of instructions keeps only the fields it really needs.
 
@@ -45,7 +45,7 @@ Fitting two register numbers (5 bits each), an opcode, and an immediate into 16 
 
 Why these 8? In ABI names they are `s0`·`s1`·`a0`~`a5`. Function arguments and return values (`a0`~`a5`) and the first saved registers to be used (`s0`·`s1`) are the most frequent in compiled code. I actually counted.
 
-![In bench.c compiled without C, 641 of 1,118 register names (57.3%) were x8~x15|xl](/img/01M6K7VHKZRMHA96RG6RVXRGRY/6e811e9d7644.webp)
+![In bench.c compiled without C, 641 of 1,118 register names (57.3%) were x8~x15|xl](/img/01M6K7VHKZRMHA96RG6RVXRGRY/5129ab32ec21.webp)
 
 In the test code compiled without C (`rv32im`, `-O2`), register names appeared 1,118 times, and 641 of them (57.3%) were `x8`~`x15`. So 8 of 32 registers (25%) account for more than half the uses. The spec adds two more reasons. The numbers are contiguous and start at a multiple of 8, so the decompressor only has to prepend `01` (r' → `01`r'). And they work unchanged on RV32E·RV64E, which have only 16 integer registers.
 
@@ -177,7 +177,7 @@ The compression ratio depends on the code. I measured two programs. One is test 
 
 The instruction count was the same with or without C (523 in both cases for bench.c -O2 RV32). As promised in Section 1, compression is a one-to-one mapping: it shortens instructions rather than removing them. More than half the instructions became 16-bit, and code shrank by 26–34%. I also ran bench.c on QEMU as `rv32im` and `rv32imc` to confirm the outputs matched and that the SHA-256 result matched Python's `hashlib`.
 
-![Of the 273 16-bit instructions in bench.c (-O2, rv32imc), c.mv is the most common at 68, followed by c.add at 41 and c.addi at 33|xl](/img/01M6K7VHKZRMHA96RG6RVXRGRY/24fd7f55a2d9.webp)
+![Of the 273 16-bit instructions in bench.c (-O2, rv32imc), c.mv is the most common at 68, followed by c.add at 41 and c.addi at 33|xl](/img/01M6K7VHKZRMHA96RG6RVXRGRY/691ba495355e.webp)
 
 I also looked at which compressed instructions were used most. The register copy `c.mv` was the most common, followed by `c.add`·`c.addi`, the stack load/store `c.lwsp`·`c.swsp`, the function return `c.jr` (`ret`), and the constant `c.li`. Instructions in the CR·CI·CSS formats, which keep 5-bit register fields, take the top spots. The 3-bit-field `c.lw`·`c.sw` appeared 10 and 7 times. On RV64, `c.sdsp`·`c.ldsp` (64-bit stack store/load) were second with 26 each: code that saves and restores registers at function entry and exit.
 

@@ -42,7 +42,7 @@ Let's expand by hand `0xf77d`, at the end of the CRC loop in the program I ran.
 
 Lining up the offset bits from the most significant gives `1_1110_1110`, which is −18 as a 9-bit signed value. The expansion is `bne a4, x0, -18`, machine code `0xfe0717e3`, and −18 from 0x80000170 matches the target 0x8000015e that objdump showed. What matters is that the offset of the expanded 32-bit instruction is also relative to **the compressed instruction's own pc**. The pc doesn't change, so the branch address circuit is reused as is.
 
-![With a fetch buffer, length detection, and a decompressor in the IF stage, the decoder sees only 32-bit instructions, and a single is_rvc bit selects pc+2/+4 and the link address|full](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/cd2c053c4bb0.webp)
+![With a fetch buffer, length detection, and a decompressor in the IF stage, the decoder sees only 32-bit instructions, and a single is_rvc bit selects pc+2/+4 and the link address|full](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/cdef194f9907.webp)
 
 Expanding a few more makes the pattern visible.
 
@@ -115,7 +115,7 @@ def redirect(self, pc):
 
 When a branch or jump changes the pc, the buffer is flushed and reading restarts from the word that contains the target. If the target is at a 4-byte boundary + 2, the lower half of the first word is dropped. If the target instruction is 32-bit, the first word alone isn't enough, so one more read is needed. That adds one more bubble cycle to the fetch.
 
-![The branch target srli of the CRC inner loop spans two words at 0x8000015e, so every branch reads two words and adds one more bubble|full](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/839f109f5995.webp)
+![The branch target srli of the CRC inner loop spans two words at 0x8000015e, so every branch reads two words and adds one more bubble|full](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/ae9da1550e49.webp)
 
 I measured how often this case comes up in a real program. I built a C program (`prog.c`) mixing sorting, CRC32, string reversal, and matrix multiplication with `-march=rv32imc -O1`. Its .text was 880 bytes, 23% smaller than the rv32im build of the same program (1,144 bytes).
 
@@ -149,7 +149,7 @@ Next is the actual execution order. I ran QEMU with one translation block per in
 
 That nearly all targets sit at +2 is particular to this program. The two most frequent targets are the CRC inner loop (1,792 times) and the sort inner loop (1,059 times), and both happened to start with a 32-bit instruction at a +2 position. So I rebuilt with GCC's alignment options (`-falign-loops=4 -falign-jumps=4 -falign-labels=4`) and repeated the measurement.
 
-![Running the same program read 33,771 32-bit words without a buffer, 23,903 with the fetch buffer, and 22,028 with targets aligned to 4 bytes|xl](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/78c7e79a40cb.webp)
+![Running the same program read 33,771 32-bit words without a buffer, 23,903 with the fetch buffer, and 22,028 with targets aligned to 4 bytes|xl](/img/01M6K7YAQT9JD45WH9Y2S8WP2Z/bab11eb43a49.webp)
 
 | Configuration | Words read | Fetch bubbles |
 |---|---|---|

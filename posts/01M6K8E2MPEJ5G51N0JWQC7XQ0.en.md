@@ -44,7 +44,7 @@ GCC produced this for the CRC-32 inner loop.
 
 When `srai` is in EX, `slli` is in MEM. The result of `slli` is in the EX/MEM register but not yet in the register file. The a1 that `srai` read in ID is the old value. This is a RAW (read-after-write) data hazard.
 
-![Forwarding paths that route EX/MEM and MEM/WB results back to the ALU inputs in EX in a 5-stage pipeline, and the hazard detector that stalls the front stages on a load-use|full](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/f53f602eeedc.webp)
+![Forwarding paths that route EX/MEM and MEM/WB results back to the ALU inputs in EX in a 5-stage pipeline, and the hazard detector that stalls the front stages on a load-use|full](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/29c565f9e82c.webp)
 
 There are two fixes: wait until the value reaches the register file (stall), or route the already computed value back to EX (forward). By distance between producer and consumer:
 
@@ -146,7 +146,7 @@ def _match(self, p, r):            # shared by forwarding and hazard detection
             and (r != 0 or not self.o['x0']))
 ```
 
-![Aggregate CPI is 1.37 with forwarding and 1.83 without, and most of the loss remaining with forwarding is branch/jump flushes|xl](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/c6770b0a8b88.webp)
+![Aggregate CPI is 1.37 with forwarding and 1.83 without, and most of the loss remaining with forwarding is branch/jump flushes|xl](/img/01M6K8E2MPEJ5G51N0JWQC7XQ0/1da4c4751070.webp)
 
 | Loss cause (total) | Forwarding on | Forwarding off |
 |---|---|---|

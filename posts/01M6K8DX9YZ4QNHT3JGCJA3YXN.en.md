@@ -51,7 +51,7 @@ Let's check one by hand. `bltu a5, a0, +24` is `0x00a7ec63`. It is B format, so 
 
 ## 2. Datapath Blocks
 
-![The single-cycle datapath connects the PC, instruction memory, register file, immediate generator, ALU, and data memory through selectors, and the next pc is chosen from pc+4, pc+imm, and (rs1+imm)&~1|full](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/480665d50f94.webp)
+![The single-cycle datapath connects the PC, instruction memory, register file, immediate generator, ALU, and data memory through selectors, and the next pc is chosen from pc+4, pc+imm, and (rs1+imm)&~1|full](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/4c32a8e263de.webp)
 
 Here is what each block does and how big it is.
 
@@ -178,7 +178,7 @@ The model emulates only two devices from the QEMU `virt` board. Writing a byte t
 
 A matching pc trace means no branch or jump ever diverged. To rule out QEMU and the model being wrong together, I also computed the answers for crc32, fib, and sieve separately in Python and checked them (`zlib.crc32`, 6765, 1007 primes).
 
-![Of the 1,076,364 executed instructions, 45% are immediate arithmetic, 20% branches, 14% register arithmetic, and 7% each loads and stores; matmul is 31% branches, and fib is 16% loads and 16% stores|xl](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/4b7c9d901038.webp)
+![Of the 1,076,364 executed instructions, 45% are immediate arithmetic, 20% branches, 14% register arithmetic, and 7% each loads and stores; matmul is 31% branches, and fib is 16% loads and 16% stores|xl](/img/01M6K8DX9YZ4QNHT3JGCJA3YXN/38993ef87c9b.webp)
 
 The instruction mix varies quite a bit by program. In total, it was 45.0% immediate arithmetic, 20.0% branches, 14.4% register arithmetic, 7.3% loads, 7.3% stores, 3.7% `jal`, and 2.4% `jalr`. There were only 76 `lui`/`auipc` instructions (they are used only once to build an address). Two things stand out.
 

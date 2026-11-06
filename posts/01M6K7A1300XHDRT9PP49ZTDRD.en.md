@@ -35,7 +35,7 @@ What deserves attention are the instructions that **don't** exist. There is no `
 
 The specification defines W instructions this way: **ignore** the upper 32 bits of the inputs, compute a 32-bit result from the lower 32 bits, **sign-extend** it to 64 bits, and write it to rd. Bits 63 through 31 of the result all end up equal.
 
-![On QEMU rv64, 0x7fffffff+1 becomes 0x0000000080000000 with add and 0xffffffff80000000 with addw, and li 0x7fffffff produces the right value with lui 0x80000 followed by addiw -1|full](/img/01M6K7A1300XHDRT9PP49ZTDRD/d3881c38ce84.webp)
+![On QEMU rv64, 0x7fffffff+1 becomes 0x0000000080000000 with add and 0xffffffff80000000 with addw, and li 0x7fffffff produces the right value with lui 0x80000 followed by addiw -1|full](/img/01M6K7A1300XHDRT9PP49ZTDRD/56f4ffbaa1db.webp)
 
 Here are the actual results run on QEMU.
 
@@ -140,7 +140,7 @@ I collected what `li` expanded into (`-march=rv64i`, no C).
 
 The rule goes like this. Values within the signed 32-bit range finish with `lui` + `addiw` (2 at most), as in part 3. For anything else, the upper part is built first, then "shift left by about 12 bits and add the next 12 bits" is repeated. If the low end has many zeros, a single shift finishes it; values with every bit populated go up to 8 instructions.
 
-![Instruction counts from li expansion: constants of 12 bits or less always took 1, 32-bit constants always took 2, and random 64-bit constants averaged 7.887 (4,718 took 8)|xl](/img/01M6K7A1300XHDRT9PP49ZTDRD/38d6568bdfba.webp)
+![Instruction counts from li expansion: constants of 12 bits or less always took 1, 32-bit constants always took 2, and random 64-bit constants averaged 7.887 (4,718 took 8)|xl](/img/01M6K7A1300XHDRT9PP49ZTDRD/3dc500e439da.webp)
 
 I drew 5,000 random values for each kind of constant and assembled them. Every value of 12 bits or less took 1 instruction, and every signed 32-bit value took 2. Of the random 64-bit values, 4,718 took 8, 281 took 6, and 1 took 7, for an average of 7.887. I re-executed the expanded instructions in Python and confirmed that all 15,000 produced the original constant.
 

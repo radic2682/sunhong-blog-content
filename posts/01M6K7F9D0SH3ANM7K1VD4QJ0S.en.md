@@ -60,7 +60,7 @@ Why is agnostic needed? Consider an out-of-order core with register renaming. Th
 
 I checked this in QEMU. I filled v8 with 7, executed `vadd.vv v8, v1, v2, v0.t` with vl=3 and mask `0b0101` (elements 0 and 2 active), then read all four elements with `vs1r.v` (stores the whole register regardless of vl).
 
-![With vl=3 and mask 0b0101, vadd under tu/mu preserves the 7 in the inactive and tail elements; under ta/ma, QEMU preserves 7 by default and fills with 0xffffffff when rvv_ta_all_1s and rvv_ma_all_1s are enabled|full](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/03d8719d0978.webp)
+![With vl=3 and mask 0b0101, vadd under tu/mu preserves the 7 in the inactive and tail elements; under ta/ma, QEMU preserves 7 by default and fills with 0xffffffff when rvv_ta_all_1s and rvv_ma_all_1s are enabled|full](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/b1d73596648f.webp)
 
 By default, QEMU preserved the previous values even under ta/ma, one of the two behaviors the specification allows. With the CPU properties `rvv_ta_all_1s=true,rvv_ma_all_1s=true`, the same machine code turned elements 1 and 3 into `0xffffffff`. In software verification, running with this setting catches bugs of the "agnostic but relies on the old value" kind. One more thing: the tail of an instruction that writes a mask result (compares and so on) is always agnostic, regardless of vta.
 
@@ -68,7 +68,7 @@ By default, QEMU preserved the previous values even under ta/ma, one of the two 
 
 The `vle32.v` from Part 13 was a unit-stride load that reads contiguous elements. There are three more ways to form addresses.
 
-![Unit-stride reads 4 contiguous elements, strided reads at a fixed spacing, indexed reads the slots pointed to by an offset vector, and segment splits the fields of an array of structs into separate registers|full](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/62d151b08fed.webp)
+![Unit-stride reads 4 contiguous elements, strided reads at a fixed spacing, indexed reads the slots pointed to by an offset vector, and segment splits the fields of an array of structs into separate registers|full](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/cddfcc079486.webp)
 
 | Kind | Load / Store | Address |
 |---|---|---|
@@ -188,7 +188,7 @@ Executed instruction counts for 1,000 elements. Scalar is the same loop compiled
 | Sum | 4,011 | 1,760 | 234 |
 | `vcompress` filter | 6,405 | 3,511 | 459 |
 
-![Executed instruction counts of the four 1000-element kernels roughly halve each time VLEN doubles; the masked add went from 8448 scalar instructions to 394 at VLEN 1024|xl](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/b4e6edf3e68b.webp)
+![Executed instruction counts of the four 1000-element kernels roughly halve each time VLEN doubles; the masked add went from 8448 scalar instructions to 394 at VLEN 1024|xl](/img/01M6K7F9D0SH3ANM7K1VD4QJ0S/93b4b02e27c0.webp)
 
 That is 31–55% of scalar at VLEN 128 and 4–7% at 1024. The filter has the highest ratio. The scalar filter skips negative values without storing them, so it needs fewer instructions per element, while the vector filter runs `vsetvli` once more to match the store count (14 instructions per iteration). As in Part 13, these are instruction counts, not time. A gather has a different address per element, so real hardware often processes only a few elements at a time (my guess). The more work one instruction does, the bigger the gap between instruction count and time.
 

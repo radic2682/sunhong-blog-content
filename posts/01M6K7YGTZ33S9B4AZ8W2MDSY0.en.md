@@ -24,7 +24,7 @@ When new instructions are written with `sw`, there are three places where the in
 | ② I$ | A line remains from previously executing that address |
 | ③ Already-fetched instructions | Instructions in IF and ID of the 5-stage pipeline, the prefetch buffer, part 21's fetch buffer |
 
-![New code written by sw goes to the D$, while the instruction side may hold old bits in the I$ and in already-fetched instructions. FENCE.I performs a D$ write-back, an I$ invalidation, and a flush, in that order|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/d6c8f8a51152.webp)
+![New code written by sw goes to the D$, while the instruction side may hold old bits in the I$ and in already-fetched instructions. FENCE.I performs a D$ write-back, an I$ invalidation, and a flush, in that order|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/28cf8725f41a.webp)
 
 ③ exists even in the simplest core with no caches. Let's trace by hand the case of modifying the very next instruction. Test 2 in the lab code looks like this.
 
@@ -141,7 +141,7 @@ def fence_i(self):
 
 First, as a correctness check, I confirmed that the output of configuration A, with neither caches nor prefetching, matched all five lines of QEMU run one instruction at a time (it did). Then I ran every combination of 4 core configurations and 4 FENCE.I implementations (NOP, flush only, flush + I$ invalidation, and that plus a D$ write-back).
 
-![The combinations of 4 core configurations × 4 FENCE.I implementations that honored the specification: with no caches and no prefetching even a NOP works, and each added structure required one more step of flush, invalidation, or write-back|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/b556fb14dd26.webp)
+![The combinations of 4 core configurations × 4 FENCE.I implementations that honored the specification: with no caches and no prefetching even a NOP works, and each added structure required one more step of flush, invalidation, or write-back|full](/img/01M6K7YGTZ33S9B4AZ8W2MDSY0/f79c2d406842.webp)
 
 | Core configuration | Test 1 / 2 without FENCE.I | Minimal spec-compliant implementation |
 |---|---|---|

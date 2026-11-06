@@ -40,7 +40,7 @@ Expanding to check: $y = 9x^2 + 6x + 1$, $y' = 18x + 6 = 24$, the same. There ar
 
 Breaking an expression into individual operations connected by arrows gives a computational graph. Let's compute $f = (x + y)\cdot z$ at $x = 2,\ y = -1,\ z = 3$.
 
-![Computational graph example. The forward pass computes q = x + y = 1 and f = q × z = 3, and the backward pass starts from f to get ∂f/∂q = 3, ∂f/∂z = 1, ∂f/∂x = 3, ∂f/∂y = 3|full](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/3ad7166c4f07.webp)
+![Computational graph example. The forward pass computes q = x + y = 1 and f = q × z = 3, and the backward pass starts from f to get ∂f/∂q = 3, ∂f/∂z = 1, ∂f/∂x = 3, ∂f/∂y = 3|full](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/1691172cf059.webp)
 
 1. **Forward pass** (left → right): $q = x + y = 1$, $f = q \cdot z = 3$.
 2. **Backward pass** (right → left): the starting point is $\partial f / \partial f = 1$.
@@ -97,7 +97,7 @@ $$z_1 = XW_1 + b_1, \quad h = \mathrm{ReLU}(z_1), \quad z_2 = hW_2 + b_2, \quad 
 | $W_2$ | $(128, 10)$ | Second-layer weights |
 | $z_2,\ p$ | $(B, 10)$ | Per-digit scores and probabilities |
 
-![Forward and backward passes of a two-layer network. The forward pass goes from X through z1, h, and z2 to compute the loss L while storing intermediate values, and the backward pass starts from L and passes gradients through z2, h, and z1 in order to get the gradients of W2 and W1|full](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/750cb9dacd03.webp)
+![Forward and backward passes of a two-layer network. The forward pass goes from X through z1, h, and z2 to compute the loss L while storing intermediate values, and the backward pass starts from L and passes gradients through z2, h, and z1 in order to get the gradients of W2 and W1|full](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/2e9f059ab659.webp)
 
 Backpropagation goes backward from the loss, exactly as in section 4.
 
@@ -164,7 +164,7 @@ Backprop code still trains "to some degree" even when it is wrong, so bugs are e
 
 ### Training Results
 
-![Training loss and test accuracy per epoch. The loss drops from 0.37 to 0.056, and test accuracy rises from 93.2% to 97.7%|xl](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/d4ae9025b809.webp)
+![Training loss and test accuracy per epoch. The loss drops from 0.37 to 0.056, and test accuracy rises from 93.2% to 97.7%|xl](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/257e04d455ac.webp)
 
 | Epoch | 1 | 2 | 5 | 10 |
 |---|---|---|---|---|
@@ -177,7 +177,7 @@ Ten passes over the 60,000 training images took 1.6 seconds in total (including 
 
 In Part 1, we said the data is grouped into batches of 64 and each batch takes one step (minibatches). There are two reasons for grouping. One is gradient quality. The gradient from a single image swings around depending on that one image, while the average over several images is closer to the direction of the whole dataset. The other is speed. Using the same code and changing only the batch size, I measured the time to process (forward + backward) one sample.
 
-![Forward + backward time per sample by batch size. 174 microseconds at batch 1, 6.2 at 8, 1.5 at 64, 1.0 at 512, and 1.3 microseconds at 4096|xl](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/92870f99be21.webp)
+![Forward + backward time per sample by batch size. 174 microseconds at batch 1, 6.2 at 8, 1.5 at 64, 1.0 at 512, and 1.3 microseconds at 4096|xl](/img/01M6EJDSNBMM4DKNDGF4PX1EYM/ed5414062e70.webp)
 
 | Batch size | 1 | 8 | 64 | 512 | 4096 |
 |---|---|---|---|---|---|

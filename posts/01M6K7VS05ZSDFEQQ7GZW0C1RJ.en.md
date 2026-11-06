@@ -42,7 +42,7 @@ In step 5, setting `0x10` changes nothing because that bit was already 1, and cl
 
 Some CSRs change something merely by being read, and writes can have side effects too. So the specification defines when a CSR is "not read" and when it is "not written."
 
-![CSR instructions decide whether to read or write based on whether a register field is x0; executing csrrs on the read-only mhartid with an rs1 value of 0 raised an illegal instruction exception in QEMU|full](/img/01M6K7VS05ZSDFEQQ7GZW0C1RJ/8b4da0ab8ed1.webp)
+![CSR instructions decide whether to read or write based on whether a register field is x0; executing csrrs on the read-only mhartid with an rs1 value of 0 raised an illegal instruction exception in QEMU|full](/img/01M6K7VS05ZSDFEQQ7GZW0C1RJ/d7111dfc5f8a.webp)
 
 - `csrrw`/`csrrwi`: if rd=`x0`, the CSR is **not read**, and there are no read side effects. The write always happens.
 - `csrrs`/`csrrc`: if rs1=`x0`, the CSR is **not written**. There are no write side effects, and no exception even for a read-only CSR. The read always happens (even if rd=`x0`).
@@ -152,7 +152,7 @@ The test program used 12 values in total: boundary values (0, 1, −1, only the 
 
 For code size, I compiled the test code `bench.c` from Part 11 and `kernels.c` from Part 1 with the C extension enabled, with and without B.
 
-![Enabling Zba, Zbb, and Zbs on the same code took bench.c on RV32 from 1,546 to 1,444 bytes (-6.6%) and kernels.c on RV64 from 468 to 426 bytes (-9.0%)|xl](/img/01M6K7VS05ZSDFEQQ7GZW0C1RJ/1132e6f2dcac.webp)
+![Enabling Zba, Zbb, and Zbs on the same code took bench.c on RV32 from 1,546 to 1,444 bytes (-6.6%) and kernels.c on RV64 from 468 to 426 bytes (-9.0%)|xl](/img/01M6K7VS05ZSDFEQQ7GZW0C1RJ/3e980dde5a3f.webp)
 
 | Code | Instruction count (without B → with B) | Most-used B instructions |
 |---|---|---|

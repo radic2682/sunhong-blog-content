@@ -23,7 +23,7 @@ When a 32-bit instruction comes in, the decoder outputs the following.
 | Control signals | ALU, memory, selectors | opcode, funct3, funct7 |
 | Illegal flag | Exception handling | When there is no row in the table |
 
-![The RV32I decoder sends register numbers straight from fixed positions, looks up the decode table with opcode, funct3, and funct7, and groups combinations not in the table and the remaining SYSTEM values as illegal|full](/img/01M6K8DR5ES95EYKYDSYMGVVEC/6fe4e0df65fd.webp)
+![The RV32I decoder sends register numbers straight from fixed positions, looks up the decode table with opcode, funct3, and funct7, and groups combinations not in the table and the remaining SYSTEM values as illegal|full](/img/01M6K8DR5ES95EYKYDSYMGVVEC/d0410c355aa8.webp)
 
 The first row is a big advantage of the RISC-V decoder. As we saw in part 2, rs1, rs2, and rd are in the same bits in every format. So the decoder does not "interpret" these fields. Wiring them to the register file addresses is all it takes. In the U and J formats, the rs1 position holds immediate bits, but the value read then is simply not used.
 
@@ -33,7 +33,7 @@ There is one thing to watch when building a pipeline, though. If you do not know
 
 If inst[1:0] is `11`, it is a 32-bit instruction, and the remaining 5 bits inst[6:2] are the major opcode. The specification's base opcode map lays out these 32 slots by inst[6:5] (rows) and inst[4:2] (columns).
 
-![Of the 32 major opcode slots, RV32I uses 11: LOAD, STORE, BRANCH, JALR, JAL, MISC-MEM, OP-IMM, OP, AUIPC, LUI, and SYSTEM; the other 21 are illegal in an RV32I decoder|full](/img/01M6K8DR5ES95EYKYDSYMGVVEC/15b0a3e70c94.webp)
+![Of the 32 major opcode slots, RV32I uses 11: LOAD, STORE, BRANCH, JALR, JAL, MISC-MEM, OP-IMM, OP, AUIPC, LUI, and SYSTEM; the other 21 are illegal in an RV32I decoder|full](/img/01M6K8DR5ES95EYKYDSYMGVVEC/bff7bee38be9.webp)
 
 RV32I uses 11 slots. Of the other 21, 17 belong to other standard extensions (F's LOAD-FP, A's AMO, RV64's OP-32, etc.), custom use (custom-0~3), or are reserved, and the 4 slots in the last column are set aside for instructions longer than 32 bits. In a core that implements only RV32I, all 21 are illegal.
 

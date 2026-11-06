@@ -108,7 +108,7 @@ As in the third row, `andi rd, rs, -2048` clears only the lower 11 bits, not the
 
 Instructions are 32 bits, so a 32-bit constant cannot fit in a single instruction. RISC-V splits the constant into its upper 20 bits and lower 12 bits and builds it with two instructions. `lui rd, imm` (load upper immediate) places a 20-bit immediate in the upper bits and fills the lower 12 bits with 0. Then `addi` adds the lower 12 bits.
 
-![A 32-bit constant is built with lui for the upper 20 bits and addi for the lower 12 bits; if bit 11 of the lower 12 bits is 1, the lui value is incremented by 1 in advance|full](/img/01M6K5H811ZZW3XC5VR1T4F5ZY/da4ee4436943.webp)
+![A 32-bit constant is built with lui for the upper 20 bits and addi for the lower 12 bits; if bit 11 of the lower 12 bits is 1, the lui value is incremented by 1 in advance|full](/img/01M6K5H811ZZW3XC5VR1T4F5ZY/5d52989d86cd.webp)
 
 The problem is that the `addi` immediate is signed. If you try to build `0x12345fff` with `lui a0, 0x12345` and `addi a0, a0, 0xfff`, `0xfff` is read as −1 and you get `0x12344fff`. So the upper 20 bits are incremented to `0x12346`, and adding −1 brings it back. The general formula is:
 
@@ -136,7 +136,7 @@ The actual assembler expanded the `li` (load immediate) pseudo-instruction like 
 
 `auipc rd, imm` (add upper immediate to pc) shifts a 20-bit immediate up and adds it to **the address of that `auipc` instruction itself**. It builds an address from the distance to the current location instead of from a constant.
 
-![la sp, _stack_top run on QEMU: auipc sp, 0x4 adds 0x4000 to pc 0x80000000, and addi adds 0x1d0 to make 0x800041d0|full](/img/01M6K5H811ZZW3XC5VR1T4F5ZY/17f53b677391.webp)
+![la sp, _stack_top run on QEMU: auipc sp, 0x4 adds 0x4000 to pc 0x80000000, and addi adds 0x1d0 to make 0x800041d0|full](/img/01M6K5H811ZZW3XC5VR1T4F5ZY/65ec19098f2e.webp)
 
 The `la sp, _stack_top` in the startup code run on QEMU is a good example. The assembler expanded it into `auipc sp, 0x4` and `addi sp, sp, 464`. The `auipc` at 0x80000000 adds `0x4 << 12 = 0x4000` to get `0x80004000`, and then `addi` adds 464 (`0x1d0`) to give the stack top `0x800041d0`. The machine code of these two instructions contains no absolute address. Even if the whole program is loaded at a different address, the same machine code finds the same relative location. This is the foundation of position-independent code (PIC).
 

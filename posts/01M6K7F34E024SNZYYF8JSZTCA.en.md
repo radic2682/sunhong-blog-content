@@ -53,7 +53,7 @@ $$\text{VLMAX} = \frac{\text{VLEN}}{\text{SEW}} \times \text{LMUL}$$
 
 Dividing the register bit count by the element width gives the number of elements in one register, and that is multiplied by the number of grouped registers. With VLEN=128, SEW=32, and LMUL=4, it is 128/32×4 = 16.
 
-![At VLEN 128, one register holds 16 elements at e8 and 4 at e32; e32 m4 groups v8~v11 for 16 elements, and e32 mf2 uses only half for 2|full](/img/01M6K7F34E024SNZYYF8JSZTCA/5da113415e32.webp)
+![At VLEN 128, one register holds 16 elements at e8 and 4 at e32; e32 m4 groups v8~v11 for 16 elements, and e32 mf2 uses only half for 2|full](/img/01M6K7F34E024SNZYYF8JSZTCA/759609474944.webp)
 
 With LMUL=4, a group is named by its lowest register number. Writing `v8` means `v8`~`v11`, with elements 0~3 in `v8`, 4~7 in `v9`, and so on. So a group can only start at a register number that is a multiple of LMUL. Using `v1` with LMUL=2 is a reserved encoding.
 
@@ -165,7 +165,7 @@ VLEN appears nowhere in these 12 instructions. `vle32.v` is a unit-stride load: 
 
 The `vsetvli` result in a5 sets both the pointer increment and the decrement of the remaining count. Whatever vl the hardware chooses, the loop ends correctly. With 100 elements, vl went like this in each iteration.
 
-![The same loop adding 100 elements runs 25 times with vl=4 at VLEN 128, 13 times by 8 at 256, 7 times by 16 at 512, and 4 times by 32 at 1024. Only the last iteration has vl=4|xl](/img/01M6K7F34E024SNZYYF8JSZTCA/27fd34c2067c.webp)
+![The same loop adding 100 elements runs 25 times with vl=4 at VLEN 128, 13 times by 8 at 256, 7 times by 16 at 512, and 4 times by 32 at 1024. Only the last iteration has vl=4|xl](/img/01M6K7F34E024SNZYYF8JSZTCA/6b3d287bcfcb.webp)
 
 In the last iteration, vl dropped to the remaining 4. With fixed-width SIMD, these 4 would have been handled in a scalar tail loop.
 
@@ -200,7 +200,7 @@ uint64_t vadd_m1(int32_t *c, const int32_t *a,
 
 The m1 instruction count is always 12 × iterations + 13. The 12 per iteration are the loop above, and the 13 are the call, return, and code before and after the loop. The scalar loop was 813 instructions regardless of VLEN. Each doubling of VLEN nearly halves the iterations, and LMUL=4 groups four registers to quadruple VLMAX at the same VLEN. Since m4 uses 8 registers (two groups for a and b), m1 may be better in large loops that run short on registers.
 
-![Executed instruction count for a 100-element add: scalar 813; vector m1 drops from 313 at VLEN 128 to 61 at 1024, and m4 from 97 to 25|xl](/img/01M6K7F34E024SNZYYF8JSZTCA/f132f520fc46.webp)
+![Executed instruction count for a 100-element add: scalar 813; vector m1 drops from 313 at VLEN 128 to 61 at 1024, and m4 from 97 to 25|xl](/img/01M6K7F34E024SNZYYF8JSZTCA/388b24803775.webp)
 
 Instruction count here is not performance. QEMU counts one vector instruction as one instruction. How many cycles a single `vadd.vv` takes on real hardware depends on the number of lanes. With VLEN=512 and one lane, 16 elements might take 16 cycles (an estimate). Still, fetching and decoding fewer instructions is a gain that does not depend on lane count.
 

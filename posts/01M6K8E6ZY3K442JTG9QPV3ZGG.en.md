@@ -16,7 +16,7 @@ In part 17, the 5-stage pipeline with forwarding had a CPI of 1.37, and 0.36 of 
 
 The part 17 pipeline resolved branches in EX. The comparator next to the ALU learns taken in EX, and at that point the two instructions that have entered IF/ID and ID/EX are discarded. That is 2 cycles per taken branch.
 
-![For a taken branch, resolving in EX costs 2 bubbles and resolving in ID costs 1, but comparing the result of the immediately preceding instruction stalls ID for a cycle|full](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/34f37ead25b8.webp)
+![For a taken branch, resolving in EX costs 2 bubbles and resolving in ID costs 1, but comparing the result of the immediately preceding instruction stalls ID for a cycle|full](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/12e41ca09b93.webp)
 
 Moving the comparator to ID cuts the discarded instructions to one. There are three costs.
 
@@ -125,7 +125,7 @@ I added options to the part 17 model to build five configurations. In every conf
 | D | C + 8-entry RAS | 1.227 |
 | E | Branches, JAL, JALR all resolved in ID | 1.300 |
 
-![CPI by branch-handling configuration is A 1.37, B 1.33, C 1.25, D 1.23, E 1.30, and only qsort gets worse with BTFN|xl](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/0fec7f349e9f.webp)
+![CPI by branch-handling configuration is A 1.37, B 1.33, C 1.25, D 1.23, E 1.30, and only qsort gets worse with BTFN|xl](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/c9cc892ed64f.webp)
 
 Breaking down lost cycles by cause shows what each configuration changed (total over 5 programs, 1,076,364 instructions).
 
@@ -141,7 +141,7 @@ Breaking down lost cycles by cause shows what each configuration changed (total 
 - **D: RAS.** JALR losses were nearly halved, because a correctly predicted return discards only 1 cycle. fib went from 1.290 to 1.227.
 - **E: Everything in ID.** Branch flushes are lowest at 125,866 (1 per taken branch), but 118,136 cycles of ID dependency stalls appeared. That shows how common the `addi; bnez` pattern from Section 1 is. crc32 actually got worse (1.272 → 1.286), and matmul improved only slightly, from 1.364 to 1.333. On top of that, E lengthens the critical path. On CPI alone, C and D beat E, and the hardware does not need a comparator in ID.
 
-![In fib, growing the RAS depth through 0, 1, 2, 4, 8, and 16 entries raises the ret hit rate from 0% to 50%, 69%, 88%, 98.3%, and 100%, and lowers CPI from 1.290 to 1.226|xl](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/14aa59b004b5.webp)
+![In fib, growing the RAS depth through 0, 1, 2, 4, 8, and 16 entries raises the ret hit rate from 0% to 50%, 69%, 88%, 98.3%, and 100%, and lowers CPI from 1.290 to 1.226|xl](/img/01M6K8E6ZY3K442JTG9QPV3ZGG/aebef9da7116.webp)
 
 I measured RAS depth with fib, which recurses deeply. fib(20) reaches a call depth of about 20, so with 8 entries the stack runs empty when returning from the deepest levels. With 8 entries it predicted 21,515 of 21,892 (98.3%), and the remaining 377 were cases where the stack was empty and no prediction was made. Regardless of depth, **there were zero mispredictions**, because in code that follows the calling convention, pushes and pops pair up exactly. qsort got 259 of 265 with 4 entries and all of them with 8.
 

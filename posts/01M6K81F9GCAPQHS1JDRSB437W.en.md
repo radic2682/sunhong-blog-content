@@ -51,7 +51,7 @@ Every A instruction uses a variant of the R format. The opcode is `AMO` (0101111
 
 `lr.w rd, (rs1)` (load-reserved) reads a word into `rd` and registers a **reservation set** containing that address. `sc.w rd, rs2, (rs1)` (store-conditional) writes `rs2` only if the reservation is still valid and the address is within the reservation set. On success it puts 0 in `rd`; on failure it puts a nonzero value and leaves memory untouched. Whether it succeeds or fails, executing `sc` clears that hart's reservation.
 
-![Hart 1's sc.w succeeds first and writes 6, invalidating hart 0's reservation, so hart 0's sc.w returns 1; hart 0 then reads 6 again with lr.w and writes 7|full](/img/01M6K81F9GCAPQHS1JDRSB437W/fc642597d40c.webp)
+![Hart 1's sc.w succeeds first and writes 6, invalidating hart 0's reservation, so hart 0's sc.w returns 1; hart 0 then reads 6 again with lr.w and writes 7|full](/img/01M6K81F9GCAPQHS1JDRSB437W/ce7dee56a05f.webp)
 
 Only the failure code 1 is currently defined ("unspecified reason"). The specification explains that 1 was chosen "so that a simple implementation can produce it with the mux that already exists for `slt`/`sltu`." Portable software should only check whether the value is zero or not.
 
@@ -131,7 +131,7 @@ It is not enough for an atomic instruction to be atomic by itself. Suppose you t
 | rl | Release | Earlier memory accesses are not seen after this instruction |
 | aq+rl | Sequentially consistent | No reordering in either direction |
 
-![amoswap.w.aq keeps critical-section accesses from moving up, amoswap.w.rl keeps them from moving down, and accesses outside the lock are allowed to move in|full](/img/01M6K81F9GCAPQHS1JDRSB437W/70100e5fd7d9.webp)
+![amoswap.w.aq keeps critical-section accesses from moving up, amoswap.w.rl keeps them from moving down, and accesses outside the lock are allowed to move in|full](/img/01M6K81F9GCAPQHS1JDRSB437W/aa4174b8c45b.webp)
 
 As the figure shows, aq blocks only crossings from below to above, and rl only crossings from above to below. Accesses outside the lock are allowed to move into the critical section. This is why they are cheaper than `fence`. The specification explains that acquire could also be built with `fence r,rw` and release with `fence rw,w`, but that would enforce unnecessary ordering too. The ordering applies only within the same address domain (memory or I/O); ordering across the two domains is specified with `fence`.
 
@@ -186,7 +186,7 @@ The 8 instructions of the LR/SC loop include 2 that count failures. For incremen
 
 Then I increased the number of harts. Each configuration was run 3 times.
 
-![With 2, 4, and 8 harts, plain lw/addi/sw kept only 50%, 27%, and 22% of the increments while amoadd.w kept 100%, and LR/SC saw 0.89, 0.98, and 0.98 sc.w failures per increment|xl](/img/01M6K81F9GCAPQHS1JDRSB437W/2a53d023be28.webp)
+![With 2, 4, and 8 harts, plain lw/addi/sw kept only 50%, 27%, and 22% of the increments while amoadd.w kept 100%, and LR/SC saw 0.89, 0.98, and 0.98 sc.w failures per increment|xl](/img/01M6K81F9GCAPQHS1JDRSB437W/0355c04f3f86.webp)
 
 | Harts | Expected | `lw`/`addi`/`sw` result (3 runs) | 4 atomic methods |
 |---|---|---|---|

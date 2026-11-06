@@ -57,7 +57,7 @@ The iterative approach uses one adder to add one partial product (radix-2) or tw
 
 `mulh`, `mulhsu`, and `mulhu` multiply the same bits under different interpretations. We cannot have three multipliers, so the interpretation difference is absorbed on the input side. Each operand gets 1 extra bit on top: when read as signed, bit 31 is copied (sign extension), and when read as unsigned, a 0 is added. Then a 32-bit unsigned value is also exactly representable as a 33-bit signed value, and the multiplier only ever has to do a 33×33 signed multiply.
 
-![Extending rs1 and rs2 by 1 bit to 33 bits lets a single 33×33 signed multiplier handle mul, mulh, mulhsu, and mulhu|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/5f032617fc19.webp)
+![Extending rs1 and rs2 by 1 bit to 33 bits lets a single 33×33 signed multiplier handle mul, mulh, mulhsu, and mulhu|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/27164c12d354.webp)
 
 Let's read the same bits, `0xffffffff × 0xffffffff`, three ways. These are results run on QEMU.
 
@@ -129,7 +129,7 @@ Most divisions in real programs are between small numbers (a guess). Running all
 - **Skip leading zeros:** pre-shift left by the number of leading zero bits of the dividend, clz(a), and iterate only 32 − clz(a) times. The quotient bits for the leading zero bits are obviously 0.
 - **Align the divisor:** shift the divisor left up to the height of the dividend and iterate only clz(b) − clz(a) + 1 times. If a < b, the quotient is 0 and the remainder is a right away.
 
-![On 100,000 pairs with operand sizes drawn uniformly, the average iteration count dropped well below 32, to 15.47 for skipping leading zeros and 5.98 for aligning the divisor|xl](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/50a7a998b469.webp)
+![On 100,000 pairs with operand sizes drawn uniformly, the average iteration count dropped well below 32, to 15.47 for skipping leading zeros and 5.98 for aligning the divisor|xl](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/26271f72ac1a.webp)
 
 | Operand distribution (100,000 pairs) | Skip-zeros average | Align average | Align ≤ 8 iterations |
 |---|---|---|---|
@@ -144,7 +144,7 @@ There is a trap. With zero skipping, **if the divisor 0 is not blocked separatel
 
 The simplest way to attach a multicycle unit to a 5-stage pipeline is this. When a multiply or divide instruction enters EX, give the unit a start signal, and the unit holds busy at 1 until it finishes. While busy, block writes to the IF and ID pipeline registers (stall) and insert a bubble into the EX/MEM register. When done arrives, load the result into the ALU result slot and send it to MEM. From then on, it is forwarded just like a normal ALU result and written in WB.
 
-![Behind a mul that stays in EX for 4 cycles, add and sub stall in IF and ID for 3 cycles, and add receives the result forwarded from the MEM stage|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/7bccbefcdf31.webp)
+![Behind a mul that stays in EX for 4 cycles, add and sub stall in IF and ID for 3 cycles, and add receives the result forwarded from the MEM stage|full](/img/01M6K7XXTWKTP2N0FCF1DVQEFY/1952aa44ba84.webp)
 
 The figure shows the results computed by the model's timeline function. Instructions behind a `mul` with latency L = 4 stall for L − 1 = 3 cycles. `sub` has nothing to do with `mul` yet stalled along with it. That is the cost of the simple approach. To stall only dependent instructions, later instructions must pass through EX while the unit runs, but then the multiply result and a later instruction's result may want the WB port in the same cycle, which calls for a scoreboard on rd and WB port arbitration. Cores that don't want to sit idle for 32 division cycles take this path.
 

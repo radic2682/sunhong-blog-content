@@ -68,7 +68,7 @@ work:
   ret
 ```
 
-![The stack frame of work() is 80 bytes: from the top, saved ra and s0~s4 (24 bytes), buf[4], and the 9th and 10th arguments at the bottom; sp was 0x800043b0|full](/img/01M6K7A6EW8B9APZN6AC6JQ8WK/a026845dfc84.webp)
+![The stack frame of work() is 80 bytes: from the top, saved ra and s0~s4 (24 bytes), buf[4], and the 9th and 10th arguments at the bottom; sp was 0x800043b0|full](/img/01M6K7A6EW8B9APZN6AC6JQ8WK/09a513274598.webp)
 
 I ran it on QEMU and printed the real addresses. When `main` called `work`, `sp` was `0x80004400`; inside `work` it was `0x800043b0` (80 lower). Both are multiples of 16. The address of `buf` was `0x800043c8`, which is `sp + 24`. The compiler kept `x` and the loop variable in `s1`·`s2`, and the start and end addresses of `buf` in `s3`·`s4`. These values survive even when the `mkpair` call overwrites the `a` and `t` registers. The price is saving five registers in the prologue.
 
@@ -164,7 +164,7 @@ The code model (`-mcmodel`) chooses how addresses are built. `medlow` builds abs
 
 A pair marked with `R_RISCV_RELAX` may be rewritten shorter by the linker. Once it knows the actual distance, the linker turns a `call` into a single `jal` if the target is within ±1 MiB, and if an address is within ±2 KiB of `gp`, it deletes the `auipc` and turns the pair into a single `gp`-relative access.
 
-![The auipc+jalr call in the object file became a single jal after linking, and the auipc+lw global variable read became a single lw a1,-1791(gp), shrinking .text from 800 bytes to 712 bytes|full](/img/01M6K7A6EW8B9APZN6AC6JQ8WK/78af1592417f.webp)
+![The auipc+jalr call in the object file became a single jal after linking, and the auipc+lw global variable read became a single lw a1,-1791(gp), shrinking .text from 800 bytes to 712 bytes|full](/img/01M6K7A6EW8B9APZN6AC6JQ8WK/1b28151ac353.webp)
 
 To see `gp` relaxation, the linker script must define `__global_pointer$` and the startup code must set `gp`. The shared startup code lacks this, so in this part's folder I wrote a separate linker script, adding `__global_pointer$` the same way as the GNU ld default script, plus startup code. The `la gp, __global_pointer$` in the startup code is wrapped in `.option norelax`, because relaxing the instruction that sets up `gp` into a `gp`-relative access would make it reference itself.
 

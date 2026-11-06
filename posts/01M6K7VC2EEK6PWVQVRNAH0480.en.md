@@ -39,7 +39,7 @@ FS has four states: Off, Initial, Clean, and Dirty. Changing an `f` register or 
 
 ## 2. fcsr: Rounding Modes and Exception Flags
 
-![fcsr consists of 3 frm bits and 5 flag bits (NV, DZ, OF, UF, NX), and a single-precision value in an FLEN=64 register is read as a valid input only if its upper 32 bits are all 1|full](/img/01M6K7VC2EEK6PWVQVRNAH0480/4ba2c646ca10.webp)
+![fcsr consists of 3 frm bits and 5 flag bits (NV, DZ, OF, UF, NX), and a single-precision value in an FLEN=64 register is read as a valid input only if its upper 32 bits are all 1|full](/img/01M6K7VC2EEK6PWVQVRNAH0480/8869339357dd.webp)
 
 Instructions that need rounding have a 3-bit rm field (in the funct3 position of integer instructions). Values 0–4 are the five rounding modes, and 111 (DYN) means "use the mode written in `frm`." 101 and 110 are reserved. If you omit rm, the assembler inserts `dyn`.
 
@@ -50,7 +50,7 @@ Instructions that need rounding have a 3-bit rm field (in the funct3 position of
 
 The difference shows up most clearly in integer conversion. I ran `fcvt.w.s` under all five modes on QEMU.
 
-![Running fcvt.w.s under five modes: 2.5 becomes 2 under RNE and 3 under RMM and RUP, and -0.5 becomes -1 only under RDN and RMM|xl](/img/01M6K7VC2EEK6PWVQVRNAH0480/1a016af2f6e0.webp)
+![Running fcvt.w.s under five modes: 2.5 becomes 2 under RNE and 3 under RMM and RUP, and -0.5 becomes -1 only under RDN and RMM|xl](/img/01M6K7VC2EEK6PWVQVRNAH0480/2c3692dd9de2.webp)
 
 RNE and RMM differ only on ties (x.5). 2.5 gives 2 (even) under RNE and 3 under RMM, while 1.5 gives 2 under both.
 

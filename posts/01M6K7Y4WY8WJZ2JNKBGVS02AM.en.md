@@ -43,7 +43,7 @@ Whether SC may succeed is defined in section 14.2 of the specification, split in
 
 The second row is the key. The condition is not "did the value change" but "did another hart store." That is how LR/SC avoids the ABA problem that CAS (compare-and-swap) suffers from (if the value goes A→B→A, you can't tell it changed). This is also the first reason the specification gives for choosing LR/SC over CAS.
 
-![If hart 1 changes x to 99 and back to 7 between LR and SC, SC fails in a reservation implementation and succeeds in a value-comparison implementation (QEMU TCG)|full](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/ed21e7b05b7c.webp)
+![If hart 1 changes x to 99 and back to 7 between LR and SC, SC fails in a reservation implementation and succeeds in a value-comparison implementation (QEMU TCG)|full](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/ac6f6437d866.webp)
 
 Let's walk through it by hand. With x = 7, hart 0 reads 7 with `lr.w` and sets a reservation. Hart 1 writes 99 to x and then 7. The first store clears hart 0's reservation. Hart 0's `sc.w` fails because it has no reservation, and x stays 7. Hart 0 starts over from LR. The model's reservation implementation behaved exactly like this (rd = 1, x = 7). In contrast, an implementation that only checks "is the memory value the same as at LR time" on SC succeeds and writes x = 8.
 
@@ -103,7 +103,7 @@ An AMO reads a memory value, operates on it with rs2, and writes the result to t
 
 Either way, the key is "one indivisible unit." When I split the AMO in the model into a read step and a write step so another hart could slip in between, the counter that should have been 4,000 averaged 3,072 (76.8%).
 
-![Results of two harts incrementing a counter: correct LR/SC, AMO, and rl implementations kept 100%, while not clearing reservations, splitting AMOs, or ignoring rl kept only 65.6–78.0%|xl](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/ea62a1e6f00f.webp)
+![Results of two harts incrementing a counter: correct LR/SC, AMO, and rl implementations kept 100%, while not clearing reservations, splitting AMOs, or ignoring rl kept only 65.6–78.0%|xl](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/edfb1bb36809.webp)
 
 ## 5. Honoring aq/rl and FENCE in an in-order core
 
@@ -127,7 +127,7 @@ So "FENCE may be treated as a NOP" only when the core has none of the structures
 
 aq/rl follow the same logic. In an in-order core, an AMO blocks later instructions until it completes, so aq holds automatically. rl requires that the AMO be seen only after all earlier stores are visible, so with a store buffer, the buffer must be drained before the AMO. The model's spinlock (lock with `amoswap.w.aq`, increment the counter with `lw`/`addi`/`sw`, unlock with `amoswap.w.rl`) demonstrates this.
 
-![With a store buffer, if amoswap.w.rl bypasses the buffer, the lock release becomes visible before the counter store and the other hart reads the stale value|full](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/1497e1a80530.webp)
+![With a store buffer, if amoswap.w.rl bypasses the buffer, the lock release becomes visible before the counter store and the other hart reads the stale value|full](/img/01M6K7Y4WY8WJZ2JNKBGVS02AM/b95de72ad488.webp)
 
 | Spinlock configuration (expected 1,000) | Average | Correct runs (out of 20) |
 |---|---|---|
